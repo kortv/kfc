@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var sassLoaders = [
   "css-loader?sourceMap",
-  "autoprefixer-loader?browsers=last 10 version",
+  "autoprefixer-loader?browsers=last 2 version",
   "sass-loader?indentedSyntax=sass&sourceMap=map&includePaths[]=" + path.resolve(__dirname, "./public/bundle"),
 ];
 
@@ -38,7 +38,7 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"}
     ]
   },
-  
+
   plugins: [
     new ExtractTextPlugin('style.css', {
       allChunks: true
