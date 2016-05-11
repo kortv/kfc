@@ -3,7 +3,7 @@ import TableRow from './TableRow';
 
 export default function MainTabl() {
   return (
-    <div>
+    <div className="table-container">
       Таблица
       <TableRow />
     </div>

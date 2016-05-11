@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './../SASS/main.sass';
 import './../SASS/css.css';
 import './../SASS/scss.scss';
 import MainTabl from './../components/MainTabl';
@@ -14,7 +13,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="layout">
         <LeftBlock />
         <MainTabl />
       </div>
