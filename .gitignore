@@ -1,6 +1,6 @@
 .idea
 *bundle*.js*
-*.css
+style.css
 
 # Logs
 logs
