@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../SCSS/main.scss';
+import './../SASS/main.sass';
 import MainTabl from './../components/MainTabl';
 import LeftBlock from './../components/LeftBlock';
 
