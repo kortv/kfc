@@ -5,6 +5,7 @@ export default function TableRow() {
         <tr className="table-row">
             <td>12345</td>
             <td>
+                <span className="icon-moto"></span>
                 <span>доставка</span>
             </td>
             <td>
@@ -22,6 +23,7 @@ export default function TableRow() {
                 <span>руб</span>
             </td>
             <td>
+                <div className="icon-cart"></div>
                 <span>5</span>
             </td>
             <td>
