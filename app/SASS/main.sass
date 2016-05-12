@@ -21,20 +21,27 @@ html, body, #app
   height: 100%
 
 
+//html
+//  margin-right: -14px
+//  overflow: hidden
+
 ::-webkit-scrollbar
-  width: 14px
-  height: 14px
-  background: rgba(0, 0, 0, 0)
+  width: 12px
+  height: 12px
+  background: rgba(0, 0, 0, .1)
+
+//::-webkit-scrollbar:vertical
+//  padding-right: 12px
 
 ::-webkit-scrollbar-thumb
   border-radius: 6px
-  background: rgba(0, 0, 0, .3)
+  background: rgba(0, 0, 0, .2)
 
 ::-webkit-scrollbar:hover
   background: rgba(0, 0, 0, .1)
 
 ::-webkit-scrollbar-thumb:hover
-  background: rgba(0, 0, 0, .5)
+  background: rgba(0, 0, 0, .4)
 
 
 .layout
@@ -58,7 +65,7 @@ html, body, #app
   display: block
   width: 100%
   height: 100%
-  background: linear-gradient(to right, #ede9e3, #ffffff, #ede9e3)
+  background: linear-gradient(to right, #ede9e3, #F8F6F5, #ede9e3)
   background-position-x: $width-left-menu
   margin-left: $width-left-menu
   overflow-y: scroll
@@ -78,7 +85,18 @@ html, body, #app
 .table-header
   background: $red
 
-.cart
-  background: url("../img/delivery-moto.png")
+.icon-moto
+  background: url("../img/delivery-moto.png") center no-repeat
+  background-size: contain
   width: 30px
-  height: 20px
+  height: 19px
+  margin: 0 auto
+  display: block
+
+.icon-cart
+  background: url("../img/shopping-cart.png") center no-repeat
+  background-size: contain
+  width: 12px
+  height: 15px
+  display: inline-block
+  margin-right: 0.4rem

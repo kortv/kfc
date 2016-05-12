@@ -23,8 +23,8 @@ export default function TableRow() {
                 <span>руб</span>
             </td>
             <td>
-                <div className="icon-cart"></div>
-                <span>5</span>
+                <span className="icon-cart"></span>
+                <a>5</a>
             </td>
             <td>
                 <span>13:00</span>
