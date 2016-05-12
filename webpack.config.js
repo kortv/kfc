@@ -34,7 +34,7 @@ module.exports = {
     ],
 
     loaders: [
-      { test: /\.png$|\.jpg$|\.svg$/, loader: "file-loader" },
+      { test: /\.png$|\.jpg$|\.svg$/, loader: "file-loader?name=img/[name].[ext]" },
       { test: /\.sass$/, loader: ExtractTextPlugin.extract("style-loader", sassLoaders.join("!"))},
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"}
     ]
