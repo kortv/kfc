@@ -3,38 +3,40 @@ import React from 'react';
 export default function TableRow() {
     return (
         <tr className="table-row">
-            <td>12345</td>
-            <td>
+            <td className="column-number">12345</td>
+            <td className="column-type">
                 <span className="icon-moto"></span>
                 <span>доставка</span>
             </td>
-            <td>
+            <td className="column-date">
                 <span>13:00</span>
                 <span>24.04.2016</span>
             </td>
-            <td>iOS</td>
-            <td>+79037883181</td>
-            <td>Москва</td>
-            <td>Речной</td>
-            <td>Онлайн</td>
-            <td>Наличные</td>
-            <td>
+            <td className="column-user_agent">iOS</td>
+            <td className="column-tel">
+                <a>+79037883181</a>
+            </td>
+            <td className="column-city">Москва</td>
+            <td className="column-restaurant">Речной</td>
+            <td className="column-payment_order">Онлайн</td>
+            <td className="column-payment_delivery">Наличные</td>
+            <td className="column-total">
                 <span>900</span>
                 <span>руб</span>
             </td>
-            <td>
+            <td className="column-amount">
                 <span className="icon-cart"></span>
                 <a>5</a>
             </td>
-            <td>
+            <td className="column-time_issue">
                 <span>13:00</span>
                 <span>24.04.2016</span>
             </td>
-            <td>
+            <td className="column-courier">
                 <span>Красильников Василий</span>
                 <span>курьер на карте</span>
             </td>
-            <td>Ожидание курьера</td>
+            <td className="column-status">Ожидание курьера</td>
         </tr>
     );
 }

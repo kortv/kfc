@@ -72,6 +72,7 @@ html, body, #app
   table
     border-collapse: collapse
     text-align: center
+    width: 100%
     th, td
       border: 1px solid $white
       padding: .2rem .5rem
@@ -80,7 +81,18 @@ html, body, #app
     th
       color: $white
     td
-      font-size: .8rem
+      font-size: .75rem
+      padding-top: .8rem
+      padding-bottom: .8rem
+    a
+      text-decoration: underline
+      color: $red
+    span
+      display: block
+
+  .column-total, .column-amount
+    span
+      display: inline-block
 
 .table-header
   background: $red
@@ -88,8 +100,8 @@ html, body, #app
 .icon-moto
   background: url("../img/delivery-moto.png") center no-repeat
   background-size: contain
-  width: 30px
-  height: 19px
+  width: 27px
+  height: 17px
   margin: 0 auto
   display: block
 
