@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function LeftBlock() {
+export default function ModalMap(props) {
   return (
-    <div className="left-menu">
-      Левый столбец
+    <div className={props.klass}>
+      ModalMap {props.klass}
     </div>
   );
 }
