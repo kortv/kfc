@@ -22,7 +22,7 @@ export default function TableRow() {
             <td className="column-payment_delivery">Наличные</td>
             <td className="column-total">
                 <span>900</span>
-                <span>руб</span>
+                <span>&nbsp;руб</span>
             </td>
             <td className="column-amount">
                 <span className="icon-cart"></span>
