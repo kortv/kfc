@@ -16,6 +16,11 @@ $font_OfficinaSerifMediumC: "OfficinaSerifMediumC", Arial, sans-serif
   box-sizing: border-box
   outline: none
   line-height: 1.2
+  user-select: none
+  cursor: default
+
+a
+  cursor: pointer
 
 html, body, #app
   height: 100%
@@ -97,6 +102,7 @@ html, body, #app
 
 .table-header
   background: $red
+  height: 4rem
 
 .column-date, .column-time_issue
   span
@@ -141,3 +147,14 @@ html, body, #app
   height: 12px
   display: inline-block
   margin-right: 0.4rem
+
+
+///////////// Modal ///////////////
+
+.show
+  position: absolute
+  top: 20%
+  left: 40%
+
+.hide
+  display: none
