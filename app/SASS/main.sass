@@ -91,21 +91,32 @@ html, body, #app
       display: block
 
   .column-total, .column-amount
-    span
+    span, a
       display: inline-block
+      vertical-align: middle
 
 .table-header
   background: $red
+
+.column-date, .column-time_issue
+  span
+    color: $red
+  span:first-child
+    font-size: 1.1rem
 
 .column-type
   span:last-child
     color: $red
 
 .column-courier
-  min-width: 10rem
   span:last-child
     color: $red
+  p
+    display: inline-block
+    vertical-align: middle
+  p, span
     text-decoration: underline
+    white-space: nowrap
 
 .icon-moto
   background: url("../img/delivery-moto.png") center no-repeat
@@ -120,6 +131,14 @@ html, body, #app
   background-size: contain
   width: 12px
   height: 15px
+  display: inline-block
+  margin-right: 0.4rem
+
+.icon-map
+  background: url("../img/map-icon.png") center no-repeat
+  background-size: contain
+  width: 11px
+  height: 12px
   display: inline-block
   margin-right: 0.4rem
 
