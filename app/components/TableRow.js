@@ -34,7 +34,10 @@ export default function TableRow() {
             </td>
             <td className="column-courier">
                 <span>Красильников Василий</span>
-                <span>курьер на карте</span>
+                <span>
+                    <p className="icon-map"></p>
+                    <p>курьер на карте</p>
+                </span>
             </td>
             <td className="column-status">Ожидание курьера</td>
         </tr>
