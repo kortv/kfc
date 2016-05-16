@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
+import DatePicker from 'react-date-picker';
+import 'react-date-picker/index.css';
 
-import 'react-datepicker/dist/react-datepicker.css';
 
 export default class DatePick extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      startDate: this.props.date ? moment(this.props.date) : moment(),
+      date: '2016-10-03',
     };
   }
+  componentDidMount() {
 
-  handleChange = (date) => {
+  }
+  onChange =(date) => {
+    console.log(date);
     this.setState({
-      startDate: date,
+      date,
     });
   }
+
   render() {
-    return (<DatePicker
-      locale='Ru'
-      dateFormat='DD.MM.YYYY'
-      selected={this.state.startDate}
-      onChange={this.handleChange}
-    />);
+    return (<div>
+      <DatePicker
+        minDate='2013-10-10'
+        maxDate='2016-11-11'
+        locale='ru'
+        onChange={this.onChange}
+        style={{ height: 300 }}
+      />
+    </div>);
   }
 }
