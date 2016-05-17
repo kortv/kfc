@@ -22,6 +22,8 @@ export default function MainTabl() {
                     <th>Статус заказа</th>
                 </tr>
                 <TableRow />
+                <TableRow />
+                <TableRow />
             </table>
         </div>
     );
