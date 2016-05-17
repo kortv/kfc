@@ -1,11 +1,15 @@
 import React from 'react';
+import DatePick from './../components/DatePick';
+
 
 export default function LeftBlock() {
   return (
     <div className="left-menu">
         <div className=""></div>
         <div className="">
-            <div className="datepicker"></div>
+            <div className="datepicker">
+                <DatePick />
+            </div>
             <div className="button-standart"></div>
             <div className="search"></div>
             <div className=""></div>
