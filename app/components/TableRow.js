@@ -18,7 +18,7 @@ export default function TableRow() {
             </td>
             <td className="column-city">Москва</td>
             <td className="column-restaurant">Речной</td>
-            <td className="column-payment_order">Онлайн</td>
+            <td className="column-payment_order st-online">Онлайн</td>
             <td className="column-payment_delivery">Наличные</td>
             <td className="column-total">
                 <span>900</span>
