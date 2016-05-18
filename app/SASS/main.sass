@@ -24,6 +24,9 @@ a
   *
     cursor: pointer
 
+input
+  cursor: text
+
 html, body, #app
   height: 100%
 
@@ -86,7 +89,17 @@ html, body, #app
 
 .left-menu-container
   padding-left: .8rem
-  width: 85%
+  width: 84%
+  overflow-y: scroll
+  height: 100%
+  padding-bottom: 4rem
+
+.left-menu-container::-webkit-scrollbar /* хром, сафари */
+  width: 0
+.left-menu-container /* ie 10+ */
+  -ms-overflow-style: none
+.left-menu-container /* фф (свойство больше не работает, других способов тоже нет)*/
+  overflow: -moz-scrollbars-none
 
 .date-container
   display: inline-block
@@ -120,7 +133,76 @@ html, body, #app
     font-family: $font_OfficinaSerifMediumITCRegular
     font-weight: normal
 
+.left-menu-container
+  >.button-standart
+    margin-top: 1.5rem
 
+.search
+  padding-top: 1rem
+  input
+    background: url("../img/icon-search.png") center no-repeat
+    background-size: auto
+    background-position-x: 1rem
+    width: 100%
+    padding: .65rem
+    padding-left: 2.6rem
+    border-radius: .4rem
+    border: 1px solid #C2C2C2
+
+.orders-delivery, .waiting-assessment, .zones-control
+  font-size: .8rem
+  font-family: $font_PFDinDisplayPro-Light
+  padding-top: 1.5rem
+  a
+    float: right
+    text-decoration: underline
+    font-size: .65rem
+
+.block-title
+  display: block
+  border-bottom: 1px solid $red
+  padding-bottom: .3rem
+  margin-bottom: .2rem
+  color: $red
+
+.block-row
+  display: block
+
+.block-info
+  display: inline-block
+
+.block-nth
+  display: inline-block
+  float: right
+  color: $red
+
+.auth-user
+  padding-top: 1.5rem
+  font-size: .8rem
+  font-family: $font_PFDinDisplayPro-Light
+
+.icon-user
+  background: url("../img/icon-user.png") center no-repeat
+  background-size: contain
+  width: 22px
+  height: 22px
+  display: inline-block
+  vertical-align: middle
+
+.user-name
+  display: inline-block
+  vertical-align: middle
+  padding-left: .3rem
+  color: #75696a
+
+.exit-button
+  display: inline-table
+  vertical-align: middle
+  float: right
+  padding-top: .3rem
+  font-size: .7rem
+  text-decoration: underline
+  color: $red
 
 
 /////////////// Content //////////////////
@@ -292,7 +374,7 @@ html, body, #app
     font-family: $font_PFDinDisplayPro-Light !important
     font-weight: normal !important
   .dp-nav-view
-    flex: 1.5 !important
+    flex: 1.8 !important
     text-transform: uppercase
   .dp-footer-selected
     display: none
@@ -300,8 +382,8 @@ html, body, #app
     color: $red
   .dp-current
     color: $red !important
-    font-weight: bold
-  .dp-prev
+    font-weight: bold !important
+  .dp-prev, .dp-next
     color: #efefef !important
   .dp-prev-nav, .dp-next-nav
     font-size: 1.2rem
@@ -309,6 +391,13 @@ html, body, #app
     justify-content: flex-end
   .dp-next-nav
     justify-content: flex-start
+  .dp-footer-today
+    position: absolute
+    top: 0
+    color: transparent
+    left: 105px
+    height: 4rem
+    width: 11.35rem
 
 
 ///////////// Modal ///////////////
