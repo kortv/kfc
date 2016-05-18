@@ -14,10 +14,10 @@ export default function LeftBlock() {
             <div className="datepicker">
                 <DatePick />
             </div>
-            <div className="button-standart">
+            <a className="button-standart">
                 <div className="button-img-left"></div>
                 <div className="button-text">Создать новый заказ</div>
-            </div>
+            </a>
             <div className="search"></div>
             <div className="orders-delivery"></div>
             <div className="waiting-assessment"></div>

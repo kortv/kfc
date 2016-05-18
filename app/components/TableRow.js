@@ -40,9 +40,9 @@ export default function TableRow() {
                 </span>
             </td>
             <td className="column-status">Ожидание курьера</td>
-            <div className="icon-status_container">
+            <a className="icon-status_container">
                 <div className="icon-status"></div>
-            </div>
+            </a>
         </tr>
     );
 }

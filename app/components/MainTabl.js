@@ -68,9 +68,9 @@ export default function MainTabl() {
                 </span>
                     </td>
                     <td className="column-status">Ожидание курьера</td>
-                    <div className="icon-status_container">
+                    <a className="icon-status_container">
                         <div className="icon-status"></div>
-                    </div>
+                    </a>
                 </tr>
 
                 <tr className="table-row notification-row lb-incoming">
@@ -111,9 +111,9 @@ export default function MainTabl() {
                         </span>
                     </td>
                     <td className="column-status">Ожидание курьера</td>
-                    <div className="icon-status_container">
+                    <a className="icon-status_container">
                         <div className="icon-status"></div>
-                    </div>
+                    </a>
                 </tr>
 
                 <tr className="table-row notification-row lb-nomarker">
@@ -154,9 +154,9 @@ export default function MainTabl() {
                         </span>
                     </td>
                     <td className="column-status">Ожидание курьера</td>
-                    <div className="icon-status_container">
+                    <a className="icon-status_container">
                         <div className="icon-status"></div>
-                    </div>
+                    </a>
                 </tr>
 
                 <tr className="table-row notification-row lb-warning">
@@ -197,9 +197,9 @@ export default function MainTabl() {
                         </span>
                     </td>
                     <td className="column-status">Ожидание курьера</td>
-                    <div className="icon-status_container">
+                    <a className="icon-status_container">
                         <div className="icon-status"></div>
-                    </div>
+                    </a>
                 </tr>
 
             </table>

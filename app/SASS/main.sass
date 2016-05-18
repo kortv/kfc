@@ -21,6 +21,8 @@ $font_OfficinaSerifMediumC: "OfficinaSerifMediumC", Arial, sans-serif
 
 a
   cursor: pointer
+  *
+    cursor: pointer
 
 html, body, #app
   height: 100%
@@ -84,21 +86,24 @@ html, body, #app
 
 .left-menu-container
   padding-left: .8rem
-  width: 82%
+  width: 85%
 
 .date-container
   display: inline-block
   vertical-align: middle
   color: $white
 
+.datepicker
+  padding-top: 1.3rem
+
 .button-standart
   background: $red
+  display: block
   text-align: center
   padding: .65rem
   border-radius: .4rem
   font-family: $font_OfficinaSerifMediumITCRegular
   font-weight: normal
-  display: inline-block
   .button-img-left
     background: url("../img/icon-plus.png") center no-repeat
     background-size: contain
@@ -144,6 +149,7 @@ html, body, #app
     th
       color: $white
       border-top: none
+      line-height: 1.1
     td
       font-size: .75rem
       padding-top: .8rem
@@ -221,6 +227,8 @@ html, body, #app
       display: inline-block
       vertical-align: middle
 
+.header-number
+  min-width: 4rem
 .header-payment_order, .header-payment_delivery, .header-amount
   max-width: 5rem
 
@@ -275,9 +283,8 @@ html, body, #app
 ///////////// Calendar ///////////////
 
 .datepicker
-  padding-top: 1.3rem
   .date-picker
-    height: 270px
+    height: 260px !important
   .dp-cell, .dp-row, .date-picker
     border: none !important
     border-left: none !important
@@ -347,6 +354,7 @@ html, body, #app
     margin-bottom: .6rem
   .button-white
     background: $white
+    display: inline-block
     color: $red
     padding-left: 2rem
     padding-right: 2rem
