@@ -1,4 +1,4 @@
-$width-left-menu: 12rem
+$width-left-menu: 18rem
 
 $white: #fff
 $red: #b61126
@@ -57,14 +57,68 @@ html, body, #app
   overflow: hidden
   padding-right: $width-left-menu
 
+
+/////////////// Left Menu //////////////////
+
 .left-menu
   display: block
   width: $width-left-menu
   background: $white
+  border-right: 1px solid $white
   position: fixed
   left: 0
   top: 0
   bottom: 0
+  .table-header
+    padding: 1.25rem 0
+
+.logo-container
+  background: url("../img/logo-kfc_white.png") center no-repeat
+  background-size: contain
+  width: 76px
+  height: 20px
+  display: inline-block
+  vertical-align: middle
+  margin-right: 1rem
+  margin-left: .8rem
+
+.left-menu-container
+  padding-left: .8rem
+  width: 82%
+
+.date-container
+  display: inline-block
+  vertical-align: middle
+  color: $white
+
+.button-standart
+  background: $red
+  text-align: center
+  padding: .65rem
+  border-radius: .4rem
+  font-family: $font_OfficinaSerifMediumITCRegular
+  font-weight: normal
+  display: inline-block
+  .button-img-left
+    background: url("../img/icon-plus.png") center no-repeat
+    background-size: contain
+    width: 13px
+    height: 13px
+    display: inline-block
+    vertical-align: middle
+    margin-left: -23px
+    margin-right: 10px
+  .button-text
+    display: inline-block
+    vertical-align: middle
+    color: $white
+    font-family: $font_OfficinaSerifMediumITCRegular
+    font-weight: normal
+
+
+
+
+/////////////// Content //////////////////
 
 .table-container
   display: block
@@ -78,6 +132,10 @@ html, body, #app
     border-collapse: collapse
     text-align: center
     width: 100%
+    tr
+      height: 65px
+    th:first-child, td:first-child
+      border-left: none
     th, td
       border: 1px solid $white
       padding: .2rem .5rem
@@ -96,10 +154,75 @@ html, body, #app
     span
       display: block
 
+  .icon-status_container
+    width: 35px
+    height: 65px
+    position: absolute
+    border: 1px solid white
+    border-right: none
+    left: 15.75rem
+    border-radius: 40px 0 0 40px
+
+  .notification-row
+    span, a, td, span:last-child
+      color: $white
+    .icon-moto
+      background: url("../img/delivery-moto_white.png") center no-repeat
+      background-size: contain
+    .icon-cart
+      background: url("../img/shopping-cart_white.png") center no-repeat
+      background-size: contain
+    .icon-map
+      background: url("../img/map-icon_white.png") center no-repeat
+      background-size: contain
+    .icon-status
+      width: 100%
+      height: 100%
+
+  .lb-cellphone
+    background-color: #30738E
+    .icon-status_container
+      background-color: #30738E
+    .icon-status
+      background: url("../img/lb-cellphone.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+  .lb-incoming
+    background-color: #03E3AF
+    .icon-status_container
+      background-color: #03E3AF
+    .icon-status
+      background: url("../img/lb-incoming.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+  .lb-nomarker
+    background-color: #FF4F3C
+    .icon-status_container
+      background-color: #FF4F3C
+    .icon-status
+      background: url("../img/lb-nomarker.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+  .lb-warning
+    background-color: #C21B2B
+    .icon-status_container
+      background-color: #C21B2B
+    .icon-status
+      background: url("../img/lb-warning.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+
   .column-total, .column-amount
     span, a
       display: inline-block
       vertical-align: middle
+
+.header-payment_order, .header-payment_delivery, .header-amount
+  max-width: 5rem
 
 .table-header
   background: $red
@@ -149,13 +272,82 @@ html, body, #app
   display: inline-block
   margin-right: 0.4rem
 
+///////////// Calendar ///////////////
+
+.datepicker
+  padding-top: 1.3rem
+  .date-picker
+    height: 270px
+  .dp-cell, .dp-row, .date-picker
+    border: none !important
+    border-left: none !important
+    border-top: none !important
+    font-family: $font_PFDinDisplayPro-Light !important
+    font-weight: normal !important
+  .dp-nav-view
+    flex: 1.5 !important
+    text-transform: uppercase
+  .dp-footer-selected
+    display: none
+  .dp-week-day-name
+    color: $red
+  .dp-current
+    color: $red !important
+    font-weight: bold
+  .dp-prev
+    color: #efefef !important
+  .dp-prev-nav, .dp-next-nav
+    font-size: 1.2rem
+  .dp-prev-nav
+    justify-content: flex-end
+  .dp-next-nav
+    justify-content: flex-start
+
 
 ///////////// Modal ///////////////
 
-.show
-  position: absolute
-  top: 20%
-  left: 40%
-
-.hide
+.modal-close
   display: none
+
+.modal-call.modal-open
+  width: 100%
+  height: 100%
+  background: rgba(255, 255, 255, .7)
+  left: $width-left-menu
+  padding-right: $width-left-menu
+  position: absolute
+  display: flex
+  justify-content: center
+  align-items: center
+  .modal-container
+    width: 20rem
+    height: auto
+    padding: 1.6rem 4rem
+    border-radius: .3rem
+    background: $red
+    text-align: center
+  .modal-img
+    background: url("../img/img-calling_white.png") center no-repeat
+    background-size: contain
+    width: 100px
+    height: 74px
+    margin: 0 auto
+    display: block
+    margin-bottom: .6rem
+  .modal-tel
+    color: $white
+    font-family: $font_PFDinDisplayPro-Light
+    font-weight: normal
+    font-size: 2rem
+    margin-bottom: 0
+  .modal-cart
+    color: $white
+    font-family: $font_PFDinDisplayPro-Light
+    font-weight: normal
+    margin-bottom: .6rem
+  .button-white
+    background: $white
+    color: $red
+    padding-left: 2rem
+    padding-right: 2rem
+    margin-bottom: .6rem

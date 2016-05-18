@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import DatePicker from 'react-date-picker';
 import 'react-date-picker/index.css';
 
-import 'react-datepicker/dist/react-datepicker.css';
-
 export default class DatePick extends Component {
   constructor(props) {
     super(props);

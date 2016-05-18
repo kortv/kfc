@@ -4,12 +4,20 @@ import DatePick from './DatePick';
 export default function LeftBlock() {
   return (
     <div className="left-menu">
-        <div className="table-header"></div>
-        <div className="">
+        <div className="table-header">
+            <div className="logo-container"></div>
+            <div className="date-container">
+                14:50 24.04.2016
+            </div>
+        </div>
+        <div className="left-menu-container">
             <div className="datepicker">
                 <DatePick />
             </div>
-            <div className="button-standart"></div>
+            <div className="button-standart">
+                <div className="button-img-left"></div>
+                <div className="button-text">Создать новый заказ</div>
+            </div>
             <div className="search"></div>
             <div className="orders-delivery"></div>
             <div className="waiting-assessment"></div>
