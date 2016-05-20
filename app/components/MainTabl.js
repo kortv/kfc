@@ -1,8 +1,8 @@
 import React from 'react';
 import TableRow from './TableRow';
-import ModalMap from './../components/ModalMap';
-import ModalOrder from './../components/ModalOrder';
-import ModalCall from './../components/ModalCall';
+import ModalMap from './Modals/ModalMap';
+import ModalOrder from './Modals/ModalOrder';
+import ModalCall from './Modals/ModalCall';
 
 export default function MainTabl() {
     return (

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MainTabl from './../components/MainTabl';
-import LeftBlock from './../components/LeftBlock';
+import LeftBlock from './../components/LeftMenu/LeftBlock';
 // import './../SASS/scss.scss';
 
 
