@@ -36,6 +36,7 @@
         "window": true,
         "alert": true,
         "FormData": true,
+        "google": true,
         "sessionStorage": true
     }
 }

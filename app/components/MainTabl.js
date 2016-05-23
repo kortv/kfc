@@ -8,8 +8,8 @@ export default function MainTabl() {
     return (
         <div className="table-container">
             <ModalCall klass='modal-close modal-call'/>
-            <ModalOrder klass='modal-open modal-order'/>
-            <ModalMap klass='modal-close'/>
+            <ModalOrder klass='modal-close modal-order'/>
+            <ModalMap klass='modal-open'/>
             <table>
                 <tr className="table-header">
                     <th className="header-number">№</th>
