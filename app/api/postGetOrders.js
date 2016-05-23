@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-export default function postRegistrationLogin(path, body) {
+export default function postGetOrders(path, body) {
   axios.post(path, body)
   .then((data) => {
     console.log(data);
-    if (data) {
-      $('#companyModal').modal('hide');
-    }
+    this.setState({
+      orders: data.data.data,
+    });
   })
   .catch((response) => {
     console.log('get data error');

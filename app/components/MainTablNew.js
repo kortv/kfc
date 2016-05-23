@@ -1,7 +1,10 @@
 import React from 'react';
 import TableRow from './TableRow';
 
-export default function MainTablNew() {
+export default function MainTablNew(props) {
+  const rows = props.orders.length ? props.orders.map((order) => <TableRow
+  order={order} key={order.id}
+  />) : '';
   return (
     <div className='table-container'>
       <table>
@@ -24,8 +27,7 @@ export default function MainTablNew() {
           </tr>
         </thead>
         <tbody>
-          <TableRow />
-
+          {rows}
         </tbody>
       </table>
     </div>
