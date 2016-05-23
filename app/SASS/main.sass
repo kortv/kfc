@@ -22,13 +22,16 @@ button
   user-select: none
   cursor: default
 
-a
+a, label
   cursor: pointer
   *
     cursor: pointer
 
 input
   cursor: text
+
+input::-webkit-calendar-picker-indicator
+  cursor: pointer
 
 html, body, #app
   height: 100%
@@ -668,6 +671,8 @@ html, body, #app
     border-bottom: 1px solid #f5f5f5
     >div:last-child
       padding-top: .8rem
+    input
+      width: auto
     label
       font-size: 1.1rem
       font-family: $font_PFDinDisplayPro-Light
