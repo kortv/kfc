@@ -12,10 +12,10 @@ export default class App extends Component {
 
     render() {
         return (
-            <div className="layout">
+            <div className='layout'>
                 <LeftBlock />
                 <MainTabl />
             </div>
         );
-    }
+    };
 }

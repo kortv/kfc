@@ -8,6 +8,9 @@ $font_OfficinaSerifMediumITCRegular: "OfficinaSerifMediumITCRegular", Arial, san
 $font_PFDinDisplayPro-Light: "PFDinDisplayPro-Light", Arial, sans-serif
 $font_OfficinaSerifMediumC: "OfficinaSerifMediumC", Arial, sans-serif
 
+button
+  position: relative
+  z-index: 11
 
 *
   margin: 0
@@ -388,7 +391,7 @@ html, body, #app
     color: $red !important
     font-weight: bold !important
   .dp-prev, .dp-next
-    color: #efefef !important
+    color: #bababa !important
   .dp-prev-nav, .dp-next-nav
     font-size: 1.2rem
   .dp-prev-nav
@@ -594,3 +597,27 @@ html, body, #app
     border-left: none
     min-width: 1.5rem
     text-align: center
+
+.menu-orders
+  input
+    border: none
+    border-bottom: 1px solid #f5f5f5
+    width: 100%
+    font-size: 1.1rem
+    padding: 1.25rem 0 1.25rem 1.4rem
+    font-family: $font_PFDinDisplayPro-Light
+  ::-webkit-input-placeholder
+    color: black
+  ::-moz-placeholder
+    color: black /* Firefox 19+ */
+  :-moz-placeholder
+    color: black /* Firefox 18- */
+  :-ms-input-placeholder
+    color: black
+  .input-container
+    input
+      display: inline-block
+      width: 33%
+      border-right: 1px solid #f5f5f5
+    input:last-child
+      border-right: none
