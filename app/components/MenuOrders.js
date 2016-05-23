@@ -24,17 +24,33 @@ export default function MenuOrders(props) {
                 <input type='text' name='floor' placeholder='Этаж'/>
                 <input type='text' name='apartment' placeholder='Квартира/офис'/>
             </div>
-            <div className="input-home">
-                <span>Комментарии</span>
-                <input type='text' name='Comments' placeholder='код домофона 1478'/>
+            <div className="input-comments">
+                <span>Комментарии&nbsp;</span>
+                <input type='text' name='comments' placeholder='код домофона 1478'/>
+            </div>
+            <div className="payment-method">
+                <div className="payment-cash">
+                    <input id="payment-cash" className="radio-button" type="radio" name="payment-method"/>
+                    <label htmlFor="payment-cash">
+                        <span>Оплата&nbsp;</span>
+                        <span>курьеру наличными</span>
+                    </label>
+                </div>
+                <div className="payment-card">
+                    <input id="payment-card" className="radio-button" type="radio" name="payment-method"/>
+                    <label htmlFor="payment-card">
+                        <span>Оплата&nbsp;</span>
+                        <span>курьеру картой</span>
+                    </label>
+                </div>
             </div>
             <div className="place-order_container">
                 <div className="arrival-time">
                     <span>Ожидается прибытие курьера к 13:30</span>
                 </div>
-                <div className="button-standart">
+                <a className="button-standart">
                     <div className="button-text">Оформить заказ</div>
-                </div>
+                </a>
             </div>
         </div>
     );

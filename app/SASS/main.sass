@@ -583,6 +583,7 @@ html, body, #app
     border-right: none
     min-width: 1.5rem
     text-align: center
+    vertical-align: top
   .ct-nth
     display: inline-flex
     align-items: center
@@ -597,6 +598,7 @@ html, body, #app
     border-left: none
     min-width: 1.5rem
     text-align: center
+    vertical-align: top
 
 .menu-orders
   input
@@ -604,7 +606,7 @@ html, body, #app
     border-bottom: 1px solid #f5f5f5
     width: 100%
     font-size: 1.1rem
-    padding: 1.25rem 0 1.25rem 1.4rem
+    padding: 1.25rem 1.25rem 1.25rem 1.4rem
     font-family: $font_PFDinDisplayPro-Light
   ::-webkit-input-placeholder
     color: black
@@ -619,5 +621,93 @@ html, body, #app
       display: inline-block
       width: 33%
       border-right: 1px solid #f5f5f5
+    input:nth-child(2)
+      width: 24%
     input:last-child
+      width: 43%
       border-right: none
+  .input-comments
+    border-bottom: 1px solid #f5f5f5
+    span
+      font-size: 1.1rem
+      padding: 1.25rem 0 1.25rem 1.4rem
+      font-family: $font_PFDinDisplayPro-Light
+      display: inline-block
+      width: 28%
+    input
+      padding-left: 0
+      display: inline-block
+      width: 72%
+      text-overflow: ellipsis
+      border-bottom: none
+    ::-webkit-input-placeholder
+      color: #bababa
+    ::-moz-placeholder
+      color: #bababa /* Firefox 19+ */
+    :-moz-placeholder
+      color: #bababa /* Firefox 18- */
+    :-ms-input-placeholder
+      color: #bababa
+
+  .place-order_container
+    padding: 1.25rem 1.25rem 1.25rem 1.4rem
+  .arrival-time
+    display: inline-block
+    width: 60%
+    font-family: $font_OfficinaSerifMediumITCRegular
+    font-size: 1.2rem
+    color: $red
+    padding-right: 1.5rem
+    vertical-align: middle
+  .button-standart
+    display: inline-block
+    width: 40%
+    vertical-align: middle
+  .payment-method
+    padding: 1.25rem 0 1.25rem 1.4rem
+    border-bottom: 1px solid #f5f5f5
+    >div:last-child
+      padding-top: .8rem
+    label
+      font-size: 1.1rem
+      font-family: $font_PFDinDisplayPro-Light
+      padding-left: 2.2rem
+      span:last-child
+        color: $red
+
+.radio-button
+  vertical-align: top
+  width: 18px
+  height: 18px
+.radio-button + label
+  cursor: pointer
+.radio-button:not(checked)
+  position: absolute
+  opacity: 0
+.radio-button:not(checked) + label
+  position: relative
+  padding: 0 0 0 18px
+  vertical-align: top
+.radio-button:not(checked) + label:before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 16px
+  height: 16px
+  border: 1px solid #CDD1DA
+  border-radius: 50%
+  background: #FFF
+.radio-button:not(checked) + label:after
+  content: ''
+  position: absolute
+  top: 18px/2 - 10px/2
+  left: 18px/2 - 10px/2
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background: linear-gradient(#FA214D, #8C0510)
+  opacity: 0
+  transition: all .2s
+.radio-button:checked + label:after
+  opacity: 1
