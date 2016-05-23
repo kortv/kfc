@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import './../SCSS/main.scss';
+import React, {Component} from 'react';
 import MainTabl from './../components/MainTabl';
-import LeftBlock from './../components/LeftBlock';
+import LeftBlock from './../components/LeftMenu/LeftBlock';
+import googleMapInit from './../events/googleMapInit';
+// import './../SASS/scss.scss';
 
 
 export default class App extends Component {
 
-  componentDidMount() {
+    componentDidMount() {
+      google.maps.event.addDomListener(window, 'load', googleMapInit);
+    }
 
-  }
-
-  render() {
-    return (
-      <div>
-        <LeftBlock />
-        <MainTabl />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className='layout'>
+                <LeftBlock />
+                <MainTabl />
+            </div>
+        );
+    };
 }

@@ -1,0 +1,723 @@
+$width-left-menu: 18rem
+
+$white: #fff
+$red: #b61126
+
+$font_OfficinaSerifBookITC: "OfficinaSerifBookITC", Arial, sans-serif
+$font_OfficinaSerifMediumITCRegular: "OfficinaSerifMediumITCRegular", Arial, sans-serif
+$font_PFDinDisplayPro-Light: "PFDinDisplayPro-Light", Arial, sans-serif
+$font_OfficinaSerifMediumC: "OfficinaSerifMediumC", Arial, sans-serif
+
+button
+  position: relative
+  z-index: 11
+
+*
+  margin: 0
+  padding: 0
+  font-size: 100%
+  box-sizing: border-box
+  outline: none
+  line-height: 1.2
+  user-select: none
+  cursor: default
+
+a, label
+  cursor: pointer
+  *
+    cursor: pointer
+
+input
+  cursor: text
+
+input::-webkit-calendar-picker-indicator
+  cursor: pointer
+
+html, body, #app
+  height: 100%
+
+
+//html
+//  margin-right: -14px
+//  overflow: hidden
+
+::-webkit-scrollbar
+  width: 12px
+  height: 12px
+  background: rgba(0, 0, 0, .1)
+
+//::-webkit-scrollbar:vertical
+//  padding-right: 12px
+
+::-webkit-scrollbar-thumb
+  border-radius: 6px
+  background: rgba(0, 0, 0, .2)
+
+::-webkit-scrollbar:hover
+  background: rgba(0, 0, 0, .1)
+
+::-webkit-scrollbar-thumb:hover
+  background: rgba(0, 0, 0, .4)
+
+
+.layout
+  height: 100%
+  width: 100%
+  display: block
+  position: relative
+  overflow: hidden
+  padding-right: $width-left-menu
+
+
+/////////////// Left Menu //////////////////
+
+.left-menu
+  display: block
+  width: $width-left-menu
+  background: $white
+  border-right: 1px solid $white
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  .table-header
+    padding: 1.25rem 0
+
+.logo-container
+  background: url("../img/logo-kfc_white.png") center no-repeat
+  background-size: contain
+  width: 76px
+  height: 20px
+  display: inline-block
+  vertical-align: middle
+  margin-right: 1rem
+  margin-left: .8rem
+
+.left-menu-container
+  padding-left: .8rem
+  width: 84%
+  overflow-y: scroll
+  height: 100%
+  padding-bottom: 4rem
+
+.left-menu-container::-webkit-scrollbar /* хром, сафари */
+  width: 0
+.left-menu-container /* ie 10+ */
+  -ms-overflow-style: none
+.left-menu-container /* фф (свойство больше не работает, других способов тоже нет)*/
+  overflow: -moz-scrollbars-none
+
+.date-container
+  display: inline-block
+  vertical-align: middle
+  color: $white
+
+.datepicker
+  padding-top: 1.3rem
+
+.button-standart
+  background: $red
+  display: block
+  text-align: center
+  padding: .65rem
+  border-radius: .4rem
+  font-family: $font_OfficinaSerifMediumITCRegular
+  font-weight: normal
+  .button-img-left
+    background: url("../img/icon-plus.png") center no-repeat
+    background-size: contain
+    width: 13px
+    height: 13px
+    display: inline-block
+    vertical-align: middle
+    margin-left: -23px
+    margin-right: 10px
+  .button-text
+    display: inline-block
+    vertical-align: middle
+    color: $white
+    font-family: $font_OfficinaSerifMediumITCRegular
+    font-weight: normal
+
+.left-menu-container
+  >.button-standart
+    margin-top: 1.5rem
+
+.search
+  padding-top: 1rem
+  input
+    background: rgba(0, 0, 0, 0) url("../img/icon-search.png") no-repeat scroll 1rem center
+    background-size: auto
+    font-family: $font_OfficinaSerifMediumITCRegular
+    font-weight: normal
+    width: 100%
+    padding: .65rem
+    padding-left: 2.6rem
+    border-radius: .4rem
+    border: 1px solid #C2C2C2
+
+.orders-delivery, .waiting-assessment, .zones-control
+  font-size: .8rem
+  font-family: $font_PFDinDisplayPro-Light
+  padding-top: 1.5rem
+  a
+    float: right
+    text-decoration: underline
+    font-size: .65rem
+
+.block-title
+  display: block
+  border-bottom: 1px solid $red
+  padding-bottom: .3rem
+  margin-bottom: .2rem
+  color: $red
+
+.block-row
+  display: block
+
+.block-info
+  display: inline-block
+
+.block-nth
+  display: inline-block
+  float: right
+  color: $red
+
+.auth-user
+  padding-top: 1.5rem
+  font-size: .8rem
+  font-family: $font_PFDinDisplayPro-Light
+
+.icon-user
+  background: url("../img/icon-user.png") center no-repeat
+  background-size: contain
+  width: 22px
+  height: 22px
+  display: inline-block
+  vertical-align: middle
+
+.user-name
+  display: inline-block
+  vertical-align: middle
+  padding-left: .3rem
+  color: #75696a
+
+.exit-button
+  display: inline-table
+  vertical-align: middle
+  float: right
+  padding-top: .3rem
+  font-size: .7rem
+  text-decoration: underline
+  color: $red
+
+
+/////////////// Content //////////////////
+
+.table-container
+  display: block
+  width: 100%
+  height: 100%
+  background: linear-gradient(to right, #ede9e3, #F8F6F5, #ede9e3)
+  background-position-x: $width-left-menu
+  margin-left: $width-left-menu
+  overflow-y: scroll
+  table
+    border-collapse: collapse
+    text-align: center
+    width: 100%
+    tr
+      height: 65px
+    th:first-child, td:first-child
+      border-left: none
+    th, td
+      border: 1px solid $white
+      padding: .2rem .5rem
+      font-family: $font_PFDinDisplayPro-Light
+      font-weight: normal
+    th
+      color: $white
+      border-top: none
+      line-height: 1.1
+    td
+      font-size: .9rem
+      padding-top: .8rem
+      padding-bottom: .8rem
+    a
+      text-decoration: underline
+      color: $red
+    span
+      display: block
+
+  .icon-status_container
+    width: 35px
+    height: 65px
+    position: absolute
+    border: 1px solid white
+    border-right: none
+    left: 15.75rem
+    border-radius: 40px 0 0 40px
+
+  .notification-row
+    span, a, td, span:last-child
+      color: $white
+    .icon-moto
+      background: url("../img/delivery-moto_white.png") center no-repeat
+      background-size: contain
+    .icon-cart
+      background: url("../img/shopping-cart_white.png") center no-repeat
+      background-size: contain
+    .icon-map
+      background: url("../img/map-icon_white.png") center no-repeat
+      background-size: contain
+    .icon-status
+      width: 100%
+      height: 100%
+
+  .lb-cellphone
+    background-color: #30738E
+    .icon-status_container
+      background-color: #30738E
+    .icon-status
+      background: url("../img/lb-cellphone.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+  .lb-incoming
+    background-color: #03E3AF
+    .icon-status_container
+      background-color: #03E3AF
+    .icon-status
+      background: url("../img/lb-incoming.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+  .lb-nomarker
+    background-color: #FF4F3C
+    .icon-status_container
+      background-color: #FF4F3C
+    .icon-status
+      background: url("../img/lb-nomarker.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+  .lb-warning
+    background-color: #C21B2B
+    .icon-status_container
+      background-color: #C21B2B
+    .icon-status
+      background: url("../img/lb-warning.png") center no-repeat
+      background-size: 50%
+      background-position-x: 12px
+
+
+  .column-total, .column-amount
+    span, a
+      display: inline-block
+      vertical-align: middle
+
+.header-number
+  min-width: 4rem
+.header-payment_order, .header-payment_delivery, .header-amount
+  max-width: 5rem
+
+.table-header
+  background: $red
+  height: 4rem
+
+.column-date, .column-time_issue
+  span
+    color: $red
+  span:first-child
+    font-size: 1.1rem
+
+.column-type
+  span:last-child
+    color: $red
+
+.column-payment_order.st-online
+  color: green
+
+.column-courier
+  span:last-child
+    color: $red
+  p
+    display: inline-block
+    vertical-align: middle
+  p, span
+    text-decoration: underline
+    white-space: nowrap
+
+.icon-moto
+  background: url("../img/delivery-moto.png") center no-repeat
+  background-size: contain
+  width: 27px
+  height: 17px
+  margin: 0 auto
+  display: block
+
+.icon-cart
+  background: url("../img/shopping-cart.png") center no-repeat
+  background-size: contain
+  width: 12px
+  height: 15px
+  display: inline-block
+  margin-right: 0.4rem
+
+.icon-map
+  background: url("../img/map-icon.png") center no-repeat
+  background-size: contain
+  width: 11px
+  height: 12px
+  display: inline-block
+  margin-right: 0.4rem
+
+///////////// Calendar ///////////////
+
+.datepicker
+  .date-picker
+    height: 260px !important
+  .dp-cell, .dp-row, .date-picker
+    border: none !important
+    border-left: none !important
+    border-top: none !important
+    font-family: $font_PFDinDisplayPro-Light !important
+    font-weight: normal !important
+  .dp-nav-view
+    flex: 1.8 !important
+    text-transform: uppercase
+  .dp-footer-selected
+    display: none
+  .dp-week-day-name
+    color: $red
+  .dp-current
+    color: $red !important
+    font-weight: bold !important
+  .dp-prev, .dp-next
+    color: #bababa !important
+  .dp-prev-nav, .dp-next-nav
+    font-size: 1.2rem
+  .dp-prev-nav
+    justify-content: flex-end
+  .dp-next-nav
+    justify-content: flex-start
+  .dp-footer-today
+    position: absolute
+    top: 0
+    color: transparent
+    left: 105px
+    height: 4rem
+    width: 11.35rem
+
+
+///////////// Modal ///////////////
+
+.modal-close
+  display: none
+
+.modal-call.modal-open
+  width: 100%
+  height: 100%
+  background: rgba(255, 255, 255, .7)
+  left: $width-left-menu
+  padding-right: $width-left-menu
+  position: absolute
+  display: flex
+  justify-content: center
+  align-items: center
+  .modal-container
+    width: 20rem
+    height: auto
+    padding: 1.6rem 4rem
+    border-radius: .3rem
+    background: $red
+    text-align: center
+  .modal-img
+    background: url("../img/img-calling_white.png") center no-repeat
+    background-size: contain
+    width: 100px
+    height: 74px
+    margin: 0 auto
+    display: block
+    margin-bottom: .6rem
+  .modal-tel
+    color: $white
+    font-family: $font_PFDinDisplayPro-Light
+    font-weight: normal
+    font-size: 2rem
+    margin-bottom: 0
+  .modal-cart
+    color: $white
+    font-family: $font_PFDinDisplayPro-Light
+    font-weight: normal
+    margin-bottom: .6rem
+  .button-white
+    background: $white
+    display: inline-block
+    color: $red
+    padding-left: 2rem
+    padding-right: 2rem
+    margin-bottom: .6rem
+
+
+.modal-order
+  width: 100%
+  height: 100%
+  left: $width-left-menu
+  padding-right: $width-left-menu
+  position: absolute
+  .table-header
+    font-family: $font_PFDinDisplayPro-Light
+    font-size: 1.6rem
+    color: $white
+    display: flex
+    align-items: center
+  .header-tel
+    display: inline-flex
+    align-items: center
+    padding: 0 2rem
+    border-right: 1px solid $white
+    height: 100%
+  .header-name
+    display: inline-block
+    padding-left: 2rem
+  .button-close
+    border-left: 1px solid $white
+    padding-left: .4rem
+    color: $white
+    height: 4rem
+    width: 4rem
+    position: absolute
+    top: 0
+    right: $width-left-menu
+    div
+      transform: rotate(45deg)
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 3rem
+  .modal-content
+    position: relative
+    width: 100%
+    height: 100%
+  .list-products_container
+    display: block
+    padding-right: 27.3rem
+    width: 100%
+    height: 100%
+    background: linear-gradient(to right, #ede9e3, #F8F6F5, #ede9e3)
+    overflow-y: scroll
+  .menu-orders
+    position: absolute
+    top: 0
+    right: 0
+    width: 28rem
+    height: 100%
+    background: $white
+  .title-group
+    width: 100%
+    text-align: center
+    padding: .8rem 0
+    border: 1px solid $white
+    border-left: none
+    border-right: none
+    color: $red
+    font-family: $font_OfficinaSerifBookITC
+    font-size: 1.8rem
+    margin-bottom: 1.1rem
+  .list-products
+    display: flex
+    justify-content: space-around
+    align-items: flex-start
+    flex-wrap: wrap
+
+
+  .product
+    display: inline-block
+    width: 15.626rem
+    padding-bottom: 3rem
+  .product-container
+    width: 15.626rem
+    margin-bottom: .3rem
+  .product-img
+    width: 50%
+    height: 87.5px
+    display: inline-block
+    vertical-align: top
+  img
+    width: 100%
+    height: 100%
+  .product-info
+    width: 50%
+    display: inline-block
+    vertical-align: top
+    padding-top: .6rem
+  .product-title
+    color: $red
+    font-family: $font_OfficinaSerifMediumITCRegular
+    //font-weight: bold
+    padding-bottom: .5rem
+
+
+.product-price
+  border: 1px solid black
+  background: white
+  border-radius: 100px
+  display: inline-block
+  padding: 0 .5rem
+  font-family: $font_OfficinaSerifMediumITCRegular
+  span:last-child
+    font-size: .6rem
+    font-weight: bold
+
+.product-nth
+  font-family: $font_OfficinaSerifMediumITCRegular
+  color: $red
+  text-align: center
+  >div, >a
+    height: 1.4rem
+    padding: 0 .5rem
+  .ct-minus
+    display: inline-block
+    border: 1px solid $red
+    border-radius: 6px 0 0 6px
+    border-right: none
+    min-width: 1.5rem
+    text-align: center
+    vertical-align: top
+  .ct-nth
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border: 1px solid $red
+    min-width: 1.5rem
+    text-align: center
+  .ct-plus
+    display: inline-block
+    border: 1px solid $red
+    border-radius: 0 6px 6px 0
+    border-left: none
+    min-width: 1.5rem
+    text-align: center
+    vertical-align: top
+
+.menu-orders
+  input
+    border: none
+    border-bottom: 1px solid #f5f5f5
+    width: 100%
+    font-size: 1.1rem
+    padding: 1.25rem 1.25rem 1.25rem 1.4rem
+    font-family: $font_PFDinDisplayPro-Light
+  ::-webkit-input-placeholder
+    color: black
+  ::-moz-placeholder
+    color: black /* Firefox 19+ */
+  :-moz-placeholder
+    color: black /* Firefox 18- */
+  :-ms-input-placeholder
+    color: black
+  .input-container
+    input
+      display: inline-block
+      width: 33%
+      border-right: 1px solid #f5f5f5
+    input:nth-child(2)
+      width: 24%
+    input:last-child
+      width: 43%
+      border-right: none
+  .input-comments
+    border-bottom: 1px solid #f5f5f5
+    span
+      font-size: 1.1rem
+      padding: 1.25rem 0 1.25rem 1.4rem
+      font-family: $font_PFDinDisplayPro-Light
+      display: inline-block
+      width: 28%
+    input
+      padding-left: 0
+      display: inline-block
+      width: 72%
+      text-overflow: ellipsis
+      border-bottom: none
+    ::-webkit-input-placeholder
+      color: #bababa
+    ::-moz-placeholder
+      color: #bababa /* Firefox 19+ */
+    :-moz-placeholder
+      color: #bababa /* Firefox 18- */
+    :-ms-input-placeholder
+      color: #bababa
+
+  .place-order_container
+    padding: 1.25rem 1.25rem 1.25rem 1.4rem
+  .arrival-time
+    display: inline-block
+    width: 60%
+    font-family: $font_OfficinaSerifMediumITCRegular
+    font-size: 1.2rem
+    color: $red
+    padding-right: 1.5rem
+    vertical-align: middle
+  .button-standart
+    display: inline-block
+    width: 40%
+    vertical-align: middle
+  .payment-method
+    padding: 1.25rem 0 1.25rem 1.4rem
+    border-bottom: 1px solid #f5f5f5
+    >div:last-child
+      padding-top: .8rem
+    input
+      width: auto
+    label
+      font-size: 1.1rem
+      font-family: $font_PFDinDisplayPro-Light
+      padding-left: 2.2rem
+      span:last-child
+        color: $red
+  .drop-down
+    font-size: 1.1rem
+    font-family: $font_PFDinDisplayPro-Light
+    padding: .8rem 1.25rem .8rem 1.4rem
+    border-bottom: 1px solid #f5f5f5
+
+.radio-button
+  vertical-align: top
+  width: 18px
+  height: 18px
+.radio-button + label
+  cursor: pointer
+.radio-button:not(checked)
+  position: absolute
+  opacity: 0
+.radio-button:not(checked) + label
+  position: relative
+  padding: 0 0 0 18px
+  vertical-align: top
+.radio-button:not(checked) + label:before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 16px
+  height: 16px
+  border: 1px solid #CDD1DA
+  border-radius: 50%
+  background: #FFF
+.radio-button:not(checked) + label:after
+  content: ''
+  position: absolute
+  top: 18px/2 - 10px/2
+  left: 18px/2 - 10px/2
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background: linear-gradient(#FA214D, #8C0510)
+  opacity: 0
+  transition: all .2s
+.radio-button:checked + label:after
+  opacity: 1
