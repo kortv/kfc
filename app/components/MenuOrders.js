@@ -46,7 +46,8 @@ export default function MenuOrders(props) {
             </div>
             <div className="place-order_container">
                 <div className="arrival-time">
-                    <span>Ожидается прибытие курьера к 13:30</span>
+                    <span>Ожидается прибытие курьера к&nbsp;</span>
+                    <span>13:30</span>
                 </div>
                 <a className="button-standart">
                     <div className="button-text">Оформить заказ</div>
