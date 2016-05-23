@@ -9,7 +9,7 @@ var sassLoaders = [
 ];
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   entry: [
     './app/index.js'
   ],
