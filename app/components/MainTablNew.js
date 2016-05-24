@@ -1,5 +1,6 @@
 import React from 'react';
 import TableRow from './TableRow';
+import ModalOrder from './Modals/ModalOrder';
 
 export default function MainTablNew(props) {
   const rows = props.orders.length ? props.orders.map((order) => <TableRow
@@ -7,6 +8,7 @@ export default function MainTablNew(props) {
   />) : '';
   return (
     <div className='table-container'>
+      <ModalOrder klass='modal-open modal-order' />
       <table>
         <thead>
           <tr className='table-header'>
