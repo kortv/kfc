@@ -4,6 +4,11 @@ import MenuOrders from './../MenuOrders'
 import ProductsCategory from './ProductsCategory'
 
 export default function ModalOrder(props) {
+    const categoryList = props.category.length ? props.category.map((obj) =>(
+      <a key={obj.id} className="products-category">
+          <span>{obj.title}</span>
+      </a>
+    )) : '';
     return (
         <div className={props.klass}>
             <div className="table-header">
@@ -16,7 +21,9 @@ export default function ModalOrder(props) {
                 </a>
             </div>
             <div className="modal-content">
-                <ProductsCategory klass="products-category_container"/>
+                <div className="products-category_container" category={props.category}>
+                  {categoryList}
+                </div>
                 <div className="list-products_container">
                     <div className="title-group">
                         Сандвичи

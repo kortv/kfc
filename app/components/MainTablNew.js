@@ -8,7 +8,7 @@ export default function MainTablNew(props) {
   />) : '';
   return (
     <div className='table-container'>
-      <ModalOrder klass='modal-open modal-order' />
+      <ModalOrder klass='modal-open modal-order' category={props.category} />
       <table>
         <thead>
           <tr className='table-header'>
