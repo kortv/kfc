@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from './Product'
 import MenuOrders from './../MenuOrders'
+import ProductsCategory from './ProductsCategory'
 
 export default function ModalOrder(props) {
     return (
@@ -15,6 +16,7 @@ export default function ModalOrder(props) {
                 </a>
             </div>
             <div className="modal-content">
+                <ProductsCategory klass="products-category_container"/>
                 <div className="list-products_container">
                     <div className="title-group">
                         Сандвичи

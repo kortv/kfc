@@ -1,4 +1,5 @@
 import React from 'react';
+import FiveStars from './FiveStars'
 
 
 export default function MenuOrders(props) {
@@ -38,22 +39,25 @@ export default function MenuOrders(props) {
                         <input id="Gett_Taxi_Currier" className="radio-button" type="radio" name="deliveryman"/>
                         <label htmlFor="Gett_Taxi_Currier">
                             <span>Gett Taxi Currier&nbsp;</span>
-                            <span>300 руб</span>
+                            <FiveStars klass="five-stars"/>
                         </label>
+                        <span className="cost-delivery">300 руб</span>
                     </div>
                     <div className="deliveryman">
                         <input id="Yandex_Taxi_Currier" className="radio-button" type="radio" name="deliveryman"/>
                         <label htmlFor="Yandex_Taxi_Currier">
                             <span>Yandex Taxi Currier&nbsp;</span>
-                            <span>300 руб</span>
+                            <FiveStars klass="five-stars"/>
                         </label>
+                        <span className="cost-delivery">300 руб</span>
                     </div>
                     <div className="deliveryman">
                         <input id="Scooter_Currier" className="radio-button" type="radio" name="deliveryman"/>
                         <label htmlFor="Scooter_Currier">
                             <span>Scooter Currier&nbsp;</span>
-                            <span>300 руб</span>
+                            <FiveStars klass="five-stars"/>
                         </label>
+                        <span className="cost-delivery">300 руб</span>
                     </div>
                 </div>
             </div>

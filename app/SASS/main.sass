@@ -502,6 +502,11 @@ html, body, #app
     position: relative
     width: 100%
     height: 100%
+  .products-category_container
+    display: block
+    height: 2rem
+    padding-right: 27.3rem
+    background: linear-gradient(to right, #ede9e3, #F8F6F5, #ede9e3)
   .list-products_container
     display: block
     padding-right: 27.3rem
@@ -684,6 +689,34 @@ html, body, #app
     font-family: $font_PFDinDisplayPro-Light
     padding: .8rem 1.25rem .8rem 1.4rem
     border-bottom: 1px solid #f5f5f5
+  .content_drop-down
+    input
+      width: auto
+    label
+      font-size: 1.1rem
+      font-family: $font_PFDinDisplayPro-Light
+      padding-left: 2.2rem
+  .cost-delivery
+    float: right
+    color: $red
+
+
+.five-stars
+  display: inline-block
+  svg
+    width: 8px
+    height: 8px
+    display: inline-block
+    vertical-align: top
+  .full-star
+    fill: $red
+    stroke: $red
+    stroke-width: 7rem
+  .empty-star
+    stroke: $red
+    stroke-width: 7rem
+    fill: none
+
 
 .radio-button
   vertical-align: top
@@ -721,3 +754,4 @@ html, body, #app
   transition: all .2s
 .radio-button:checked + label:after
   opacity: 1
+
