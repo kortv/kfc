@@ -1,4 +1,5 @@
 import React from 'react';
+import paths from './../../_paths';
 
 
 export default function Product({ product }) {
@@ -6,7 +7,7 @@ export default function Product({ product }) {
     <div className='product'>
       <div className='product-container'>
         <div className='product-img'>
-          <img src={`http://static.kfc.ru/products//small/${product.image}`} />
+          <img src={`${paths.staticImg}/small/${product.image}`} />
         </div>
         <div className='product-info'>
           <div className='product-title'>

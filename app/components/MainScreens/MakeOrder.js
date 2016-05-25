@@ -4,6 +4,7 @@ import MenuOrders from './../MenuOrders';
 // import ProductsCategory from './ProductsCategory';
 
 export default function MakeOrder(props) {
+  const category = props.productList.length ? props.productList[0].category.title : '';
   const categoryList = props.category.length ? props.category.map((obj) => (
     <a
     key={obj.id} onClick={props.menuOne} className='products-category'
@@ -32,7 +33,7 @@ export default function MakeOrder(props) {
         </div>
         <div className='list-products_container'>
           <div className='title-group'>
-            Сандвичи
+            {category}
           </div>
           <div className='list-products'>
             {productList}
