@@ -23,7 +23,7 @@ export default function MakeOrder(props) {
           <span>+79037339131</span>
         </div>
         <div className='header-name'>Создать новый заказ</div>
-        <a className='button-close'>
+        <a onClick={props.onClose} className='button-close'>
           <div>+</div>
         </a>
       </div>
