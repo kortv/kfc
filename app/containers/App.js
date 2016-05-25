@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import MainTablNew from './../components/MainTablNew';
+import MainScreen from './../components/MainScreen';
 import LeftBlock from './../components/LeftMenu/LeftBlock';
 
-import googleMapInit from './../events/googleMapInit';
+// import googleMapInit from './../events/googleMapInit';
 import menuOne from './../events/menuOne';
 
 import postGetOrders from './../api/postGetOrders';
@@ -21,23 +21,26 @@ export default class App extends Component {
     this.state = {
       orders: [],
       category: [],
+      productList: [],
       restaurantId: 2995,
+      screen: 'TablOrders',
     };
   }
 
   componentDidMount() {
     // google.maps.event.addDomListener(window, 'load', googleMapInit);
-    // this.postGetOrders(paths.main);
+    this.postGetOrders(paths.main);
     this.postGetMenuCategory(paths.menuCategory, 2728);
   }
 
   render() {
     return (
       <div className='layout'>
-        <LeftBlock />
-        <MainTablNew
+        <LeftBlock onMakeOrder={() => { this.setState({ screen: 'MakeOrder' }); }} />
+        <MainScreen
         orders={this.state.orders} category={this.state.category}
-        menuOne={this.menuOne}
+        menuOne={this.menuOne} screen={this.state.screen}
+        productList={this.state.productList}
         />
       </div>
     );

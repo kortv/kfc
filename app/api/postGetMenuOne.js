@@ -3,29 +3,29 @@ import paths from './../_paths';
 
 export default function postGetMenuOne(restaurantId, categoryId) {
   const path = paths.menuProduct;
+  // const bodyData = {
+  //   start: 0,
+  //   count: 999,
+  // };
+
   const bodyData = {
+    filter: {
+      type: 'and',
+      args: [{
+        type: 'eq',
+        args: ['restaurant_id', restaurantId],
+      }, {
+        type: 'eq',
+        args: ['category_id', categoryId],
+      }],
+    },
+    sort: [{
+      column: 'price',
+      descending: false,
+    }],
     start: 0,
     count: 999,
   };
-
-const bodu = {
-  filter: {
-    type: 'and',
-    args: [{
-      type: 'eq',
-      args: ['restaurant_id', restaurantId]
-    }, {
-      type: 'eq',
-      args: ['category_id', categoryId]
-    }]
-  },
-  sort: [{
-    column: 'price',
-    descending: false
-  }],
-  start: 0,
-  count: 999
-}
 
 
   /*
@@ -51,8 +51,8 @@ const bodu = {
     /*      { start:0,count:999 } */
   /* {filter:{type:'eq',args:['restaurant_id','2995']},start:0,count:999}*/
   /* {filter:{type:'eq',args:[{restaurant_id:'2995', category_id: '5' }]},start:0,count:999}*/
-  console.log(path, bodu);
-  axios.post(path, bodu)
+  console.log(path, bodyData);
+  axios.post(path, bodyData)
   .then((data) => {
     console.log(data);
     this.setState({

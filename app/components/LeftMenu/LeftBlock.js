@@ -4,7 +4,7 @@ import TableOrders from './TableOrders';
 import TableRating from './TableRating';
 import TableZones from './TableZones';
 
-export default function LeftBlock() {
+export default function LeftBlock(props) {
   return (
     <div className="left-menu">
         <div className="table-header">
@@ -17,7 +17,7 @@ export default function LeftBlock() {
             <div className="datepicker">
                 <DatePick />
             </div>
-            <a className="button-standart">
+            <a onClick={props.onMakeOrder} className="button-standart">
                 <div className="button-img-left"></div>
                 <div className="button-text">Создать новый заказ</div>
             </a>

@@ -34,7 +34,7 @@ export default function postGetMenuCategory(path) {
     console.log(data);
     this.setState({
       category: data.data.data,
-    })
+    });
   })
   .catch((response) => {
     console.log('get data error');

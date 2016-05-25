@@ -1,5 +1,5 @@
 import React from 'react';
-import getTime from './../events/getTime';
+import getTime from './../../events/getTime';
 
 export default function TableRow({ order }) {
   return (
