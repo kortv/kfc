@@ -41,6 +41,7 @@ export default class App extends Component {
         orders={this.state.orders} category={this.state.category}
         menuOne={this.menuOne} screen={this.state.screen}
         productList={this.state.productList}
+        onClose={() => { this.setState({ screen: 'TablOrders' }); }}
         />
       </div>
     );
