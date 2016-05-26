@@ -2,7 +2,7 @@ import React from 'react';
 import paths from './../../_paths';
 
 
-export default function Product({ product }) {
+export default function Product({ product, onCount }) {
   return (
     <div className='product'>
       <div className='product-container'>
@@ -20,13 +20,13 @@ export default function Product({ product }) {
         </div>
       </div>
       <div className='product-nth'>
-        <a className='ct-minus'>
+        <a onClick={() => { onCount(product, -1); }} className='ct-minus'>
           <span>-</span>
         </a>
         <div className='ct-nth'>
-          <span>0</span>
+          <span>{product.qnt || 0}</span>
         </div>
-        <a className='ct-plus'>
+        <a onClick={() => { onCount(product, 1); }} className='ct-plus'>
           <span>+</span>
         </a>
       </div>

@@ -9,7 +9,8 @@ export default function MainScreen(props) {
     screen = (<MakeOrder
     klass='modal-open modal-order' category={props.category}
     menuOne={props.menuOne} productList={props.productList}
-    onClose={props.onClose}
+    onClose={props.onClose} onCount={props.onCount} basket={props.basket}
+    postOrderBasket={props.postOrderBasket}
     />);
     break;
 

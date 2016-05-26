@@ -14,7 +14,7 @@ export default function MakeOrder(props) {
     </a>
   )) : '';
   const productList = props.productList.length ? props.productList.map((obj) => (
-    <Product product={obj} key={obj.id} />
+    <Product product={props.basket[obj.id] || obj} key={obj.id} onCount={props.onCount} />
   )) : '';
   return (
     <div className='modal-open modal-order'>
@@ -39,7 +39,7 @@ export default function MakeOrder(props) {
             {productList}
           </div>
         </div>
-        <MenuOrders klass='menu-orders' />
+        <MenuOrders klass='menu-orders' postOrderBasket={props.postOrderBasket} />
       </div>
     </div>
   );
