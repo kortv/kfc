@@ -1,6 +1,7 @@
 .idea
 *bundle*.js*
 style.css
+_path.js
 
 # Logs
 logs

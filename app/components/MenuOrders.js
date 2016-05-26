@@ -13,6 +13,9 @@ export default function MenuOrders(props) {
                     <option value='Клин'>Клин</option>
                     <option value='Сочи'>Сочи</option>
                 </datalist>
+                <a className="button-standart">
+                    <div className="button-text">Сообщить новый адрес</div>
+                </a>
             </div>
             <div className="input-street">
                 <input type='text' name='street' placeholder='Улица*'/>
