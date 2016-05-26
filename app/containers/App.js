@@ -4,7 +4,9 @@ import LeftBlock from './../components/LeftMenu/LeftBlock';
 
 // import googleMapInit from './../events/googleMapInit';
 import menuOne from './../events/menuOne';
+import onCount from './../events/onCount';
 
+import postOrderBasket from './../api/postOrderBasket';
 import postGetOrders from './../api/postGetOrders';
 import postGetMenuCategory from './../api/postGetMenuCategory';
 import paths from './../_paths';
@@ -14,7 +16,9 @@ export default class App extends Component {
     super(props);
 
     this.menuOne = menuOne.bind(this);
+    this.onCount = onCount.bind(this);
 
+    this.postOrderBasket = postOrderBasket.bind(this);
     this.postGetOrders = postGetOrders.bind(this);
     this.postGetMenuCategory = postGetMenuCategory.bind(this);
 
@@ -24,6 +28,7 @@ export default class App extends Component {
       productList: [],
       restaurantId: 2995,
       screen: 'TablOrders',
+      basket: {},
     };
   }
 
@@ -39,9 +44,10 @@ export default class App extends Component {
         <LeftBlock onMakeOrder={() => { this.setState({ screen: 'MakeOrder' }); }} />
         <MainScreen
         orders={this.state.orders} category={this.state.category}
-        menuOne={this.menuOne} screen={this.state.screen}
-        productList={this.state.productList}
+        menuOne={this.menuOne} screen={this.state.screen} basket={this.state.basket}
+        productList={this.state.productList} onCount={this.onCount}
         onClose={() => { this.setState({ screen: 'TablOrders' }); }}
+        postOrderBasket={this.postOrderBasket}
         />
       </div>
     );

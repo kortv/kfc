@@ -94,7 +94,7 @@ export default function MenuOrders(props) {
                     <span>Ожидается прибытие курьера к&nbsp;</span>
                     <span>13:30</span>
                 </div>
-                <a className="button-standart">
+                <a onClick={props.postOrderBasket} className="button-standart">
                     <div className="button-text">Оформить заказ</div>
                 </a>
             </div>
