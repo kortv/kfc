@@ -1,7 +1,7 @@
 import React from 'react';
 import getTime from './../../events/getTime';
 
-export default function TableRow({ order }) {
+export default function TableRow({ order, tableClick }) {
   return (
     <tr className='table-rowe'>
       <td className='column-number'>{order.id}</td>
@@ -35,7 +35,7 @@ export default function TableRow({ order }) {
       </td>
       <td className='column-courier'>
         <span>Красильников Василий</span>
-        <span>
+        <span onClick={tableClick}>
           <p className='icon-map'></p>
           <p>курьер на карте</p>
         </span>

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import MainScreen from './../components/MainScreen';
 import LeftBlock from './../components/LeftMenu/LeftBlock';
 
-// import googleMapInit from './../events/googleMapInit';
+import googleMapInit from './../events/googleMapInit';
 import menuOne from './../events/menuOne';
 import onCount from './../events/onCount';
+import tableClick from './../events/tableClick';
 
 import postOrderBasket from './../api/postOrderBasket';
 import postGetOrders from './../api/postGetOrders';
@@ -15,6 +16,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
+    this.tableClick = tableClick.bind(this);
     this.menuOne = menuOne.bind(this);
     this.onCount = onCount.bind(this);
 
@@ -29,6 +31,7 @@ export default class App extends Component {
       restaurantId: 2995,
       screen: 'TablOrders',
       basket: {},
+      showMap: false,
     };
   }
 
@@ -47,7 +50,8 @@ export default class App extends Component {
         menuOne={this.menuOne} screen={this.state.screen} basket={this.state.basket}
         productList={this.state.productList} onCount={this.onCount}
         onClose={() => { this.setState({ screen: 'TablOrders' }); }}
-        postOrderBasket={this.postOrderBasket}
+        postOrderBasket={this.postOrderBasket} tableClick={this.tableClick}
+        showMap={this.state.showMap}
         />
       </div>
     );
