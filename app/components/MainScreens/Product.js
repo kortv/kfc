@@ -24,7 +24,7 @@ export default function Product({ product, onCount }) {
           <span>-</span>
         </a>
         <div className='ct-nth'>
-          <span>{product.qnt || 0}</span>
+          <span>{product.qty || 0}</span>
         </div>
         <a onClick={() => { onCount(product, 1); }} className='ct-plus'>
           <span>+</span>
