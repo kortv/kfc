@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import TablOrders from './../components/Grid/TablOrders';
-import ModalMap from './../components/Currier/ModalMap';
+import ModalMap from './../components/Courier/ModalMap';
 
 import postGetOrders from './../api/postGetOrders';
 import paths from './../_paths';
 
-export default class Currier extends Component {
+export default class Courier extends Component {
   constructor(props) {
     super(props);
 

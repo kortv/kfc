@@ -38,7 +38,7 @@ export default function TableRow({ order }) {
       <td className='column-courier'>
         <span>Красильников Василий</span>
         <span>
-          <Link to='/currier/currierId'>
+          <Link to='/courier/courierId'>
             <p className='icon-map'></p>
             <p>курьер на карте</p>
           </Link>
