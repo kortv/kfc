@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LeftBlock from './../components/LeftMenu/LeftBlock';
+import ProductList from './../components/MakeOrder/ProductList';
 
 import menuOne from './../events/menuOne';
 import onCount from './../events/onCount';
@@ -11,7 +11,7 @@ import postGetOrders from './../api/postGetOrders';
 import postGetMenuCategory from './../api/postGetMenuCategory';
 import paths from './../_paths';
 
-export default class App extends Component {
+export default class MakeOrder extends Component {
   constructor(props) {
     super(props);
 
@@ -45,10 +45,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='layout'>
-        <LeftBlock onMakeOrder={() => { this.setState({ screen: 'MakeOrder' }); }} />
-        {this.props.children}
-      </div>
+      <ProductList
+      klass='modal-open modal-order' category={this.state.category}
+      menuOne={this.menuOne} productList={this.state.productList}
+      onClose={this.onClose} onCount={this.onCount} basket={this.state.basket}
+      postOrderBasket={this.postOrderBasket} allState={this.state}
+      />
     );
   }
 }

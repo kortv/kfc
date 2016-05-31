@@ -3,6 +3,7 @@ import DatePick from './DatePick';
 import TableOrders from './TableOrders';
 import TableRating from './TableRating';
 import TableZones from './TableZones';
+import { Link } from 'react-router';
 
 export default function LeftBlock(props) {
   return (
@@ -17,10 +18,10 @@ export default function LeftBlock(props) {
             <div className="datepicker">
                 <DatePick />
             </div>
-            <a onClick={props.onMakeOrder} className="button-standart">
+            <Link to="/order" className="button-standart">
                 <div className="button-img-left"></div>
                 <div className="button-text">Создать новый заказ</div>
-            </a>
+            </Link>
             <div className="search">
                 <input placeholder="Поиск заказа/заказчика"/>
             </div>

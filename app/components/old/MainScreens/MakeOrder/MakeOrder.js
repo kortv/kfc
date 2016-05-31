@@ -39,7 +39,9 @@ export default function MakeOrder(props) {
             {productList}
           </div>
         </div>
-        <MenuOrders klass='menu-orders' postOrderBasket={props.postOrderBasket} />
+        <MenuOrders
+        klass='menu-orders' postOrderBasket={props.postOrderBasket} allState={props.allState}
+        />
       </div>
     </div>
   );
