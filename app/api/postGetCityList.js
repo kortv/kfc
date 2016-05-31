@@ -7,6 +7,9 @@ export default function postGetCityList() {
     console.log(data);
     const mos = data.data.filter((obj) => obj.title == 'Москва');
     console.log(mos);
+    this.setState({
+      cityList: data.data,
+    });
   })
   .catch((response) => {
     console.log('get data error');

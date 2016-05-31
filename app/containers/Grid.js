@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LeftBlock from './../components/LeftMenu/LeftBlock';
+import TablOrders from './../components/Grid/TablOrders';
 
 import menuOne from './../events/menuOne';
 import onCount from './../events/onCount';
@@ -11,7 +11,7 @@ import postGetOrders from './../api/postGetOrders';
 import postGetMenuCategory from './../api/postGetMenuCategory';
 import paths from './../_paths';
 
-export default class App extends Component {
+export default class Grid extends Component {
   constructor(props) {
     super(props);
 
@@ -37,17 +37,15 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.postGetStreetList();
-    this.postGetCityList();
     this.postGetOrders(paths.main);
-    this.postGetMenuCategory(paths.menuCategory, 2728);
   }
 
   render() {
     return (
-      <div className='layout'>
-        <LeftBlock onMakeOrder={() => { this.setState({ screen: 'MakeOrder' }); }} />
-        {this.props.children}
+      <div className='table-container'>
+        <TablOrders
+          orders={this.state.orders}
+        />
       </div>
     );
   }

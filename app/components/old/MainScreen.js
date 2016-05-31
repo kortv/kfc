@@ -12,7 +12,7 @@ export default function MainScreen(props) {
     klass='modal-open modal-order' category={props.category}
     menuOne={props.menuOne} productList={props.productList}
     onClose={props.onClose} onCount={props.onCount} basket={props.basket}
-    postOrderBasket={props.postOrderBasket}
+    postOrderBasket={props.postOrderBasket} allState={props.allState}
     />);
     break;
 
