@@ -7,6 +7,7 @@ import menuOne from './../events/menuOne';
 import onCount from './../events/onCount';
 import tableClick from './../events/tableClick';
 
+import postGetCity from './../api/postGetCity';
 import postOrderBasket from './../api/postOrderBasket';
 import postGetOrders from './../api/postGetOrders';
 import postGetMenuCategory from './../api/postGetMenuCategory';
@@ -20,6 +21,7 @@ export default class App extends Component {
     this.menuOne = menuOne.bind(this);
     this.onCount = onCount.bind(this);
 
+    this.postGetCity = postGetCity.bind(this);
     this.postOrderBasket = postOrderBasket.bind(this);
     this.postGetOrders = postGetOrders.bind(this);
     this.postGetMenuCategory = postGetMenuCategory.bind(this);
@@ -37,6 +39,7 @@ export default class App extends Component {
 
   componentDidMount() {
     // google.maps.event.addDomListener(window, 'load', googleMapInit);
+    this.postGetCity();
     this.postGetOrders(paths.main);
     this.postGetMenuCategory(paths.menuCategory, 2728);
   }

@@ -57,46 +57,51 @@ export default class PopUpInfoWindow extends Component {
   }
   render() {
     return (
-      <GoogleMapLoader
-        containerElement={
-          <div
-            {...this.props}
-            style={{ height: '340px' }}
-          >
-          </div>
-        }
-        googleMapElement={
-          <GoogleMap
-            center={this.state.center}
-            defaultZoom={16}
-            ref='map'
-          >
-            {this.state.markers.map((marker, index) => {
-              const ref = `marker_${index}`;
-
-              return (
-                <Marker
-                key={index}
-                ref={ref}
-                position={marker.position}
-                onClick={this.handleMarkerClick.bind(this, marker)}
-                >
-
-                {/*
-                  Show info window only if the 'showInfo' key of the marker is true.
-                  That is, when the Marker pin has been clicked and 'handleMarkerClick' has been
-                  Successfully fired.
-                */}
-                {marker.showInfo ? this.renderInfoWindow(ref, marker) : null}
-
-                </Marker>
-              );
-            })
+      <div>
+        <div>Хедер для карты</div>
+        <div className='map-wraper'>
+          <GoogleMapLoader
+            containerElement={
+              <div
+                {...this.props}
+                style={{ height: '340px' }}
+              >
+              </div>
             }
+            googleMapElement={
+              <GoogleMap
+                center={this.state.center}
+                defaultZoom={16}
+                ref='map'
+              >
+                {this.state.markers.map((marker, index) => {
+                  const ref = `marker_${index}`;
 
-          </GoogleMap>
-        }
-      />
+                  return (
+                    <Marker
+                    key={index}
+                    ref={ref}
+                    position={marker.position}
+                    onClick={this.handleMarkerClick.bind(this, marker)}
+                    >
+
+                    {/*
+                      Show info window only if the 'showInfo' key of the marker is true.
+                      That is, when the Marker pin has been clicked and 'handleMarkerClick' has been
+                      Successfully fired.
+                    */}
+                    {marker.showInfo ? this.renderInfoWindow(ref, marker) : null}
+
+                    </Marker>
+                  );
+                })
+                }
+
+              </GoogleMap>
+            }
+          />
+        </div>
+      </div>
     );
   }
 }
