@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import MainScreen from './../components/MainScreen';
 import LeftBlock from './../components/LeftMenu/LeftBlock';
 
-import googleMapInit from './../events/googleMapInit';
 import menuOne from './../events/menuOne';
 import onCount from './../events/onCount';
 import tableClick from './../events/tableClick';
 
 import postGetCityList from './../api/postGetCityList';
+import postGetStreetList from './../api/postGetStreetList';
 import postOrderBasket from './../api/postOrderBasket';
 import postGetOrders from './../api/postGetOrders';
 import postGetMenuCategory from './../api/postGetMenuCategory';
@@ -21,6 +21,7 @@ export default class App extends Component {
     this.menuOne = menuOne.bind(this);
     this.onCount = onCount.bind(this);
 
+    this.postGetStreetList = postGetStreetList.bind(this);
     this.postGetCityList = postGetCityList.bind(this);
     this.postOrderBasket = postOrderBasket.bind(this);
     this.postGetOrders = postGetOrders.bind(this);
@@ -38,7 +39,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    // google.maps.event.addDomListener(window, 'load', googleMapInit);
+    this.postGetStreetList();
     this.postGetCityList();
     this.postGetOrders(paths.main);
     this.postGetMenuCategory(paths.menuCategory, 2728);
