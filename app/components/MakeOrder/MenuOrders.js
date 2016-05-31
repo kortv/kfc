@@ -3,9 +3,11 @@ import FiveStars from './FiveStars';
 
 
 export default function MenuOrders(props) {
-  const { cityList } = props.allState;
+  const {
+    cityList, streetList, houseList, postOrderBasket, postGetHouseList, setRestaurantId,
+  } = props;
   return (
-    <div className={props.klass}>
+    <div className='menu-orders'>
       <div className='input-city'>
         <input
         onChange={(e) => {
@@ -23,10 +25,38 @@ export default function MenuOrders(props) {
         </a>
       </div>
       <div className='input-street'>
-        <input type='text' name='street' placeholder='Улица*' />
+        <input
+        onChange={(e) => {
+          console.log(e.target.value);
+          const arr = streetList.filter((obj) => obj.street == e.target.value);
+          if (arr.length) {
+            console.log(arr[0]);
+            postGetHouseList(arr[0]);
+          }
+        }} type='text' name='street'
+        list='streetname' placeholder='Улица*'
+        />
+        <datalist id='streetname'>
+          {streetList.map((obj, key) => <option key={key} value={obj.street}>
+          </option>)}
+        </datalist>
       </div>
       <div className='input-home'>
-        <input type='text' name='home' placeholder='Дом/корпус/строение*' />
+        <input
+        onChange={(e) => {
+          console.log(e.target.value);
+          const arr = houseList.filter((obj) => obj.housing_number === e.target.value);
+          if (arr.length) {
+            console.log(arr[0]);
+            setRestaurantId(arr[0].restaurant_id);
+          }
+        }}
+        type='text' list='homename' name='home' placeholder='Дом/корпус/строение*'
+        />
+        <datalist id='homename'>
+          {houseList.map((obj) => <option key={obj.id} value={obj.housing_number}>
+          </option>)}
+        </datalist>
       </div>
       <div className='input-container'>
         <input type='text' name='entrance' placeholder='Подъезд' />
@@ -103,7 +133,7 @@ export default function MenuOrders(props) {
           <span>Ожидается прибытие курьера к&nbsp;</span>
           <span>13:30</span>
         </div>
-        <a onClick={props.postOrderBasket} className='button-standart'>
+        <a onClick={postOrderBasket} className='button-standart'>
           <div className='button-text'>Оформить заказ</div>
         </a>
       </div>
