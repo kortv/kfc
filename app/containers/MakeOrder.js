@@ -1,56 +1,79 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+
 import ProductList from './../components/MakeOrder/ProductList';
+import MenuOrders from './../components/MakeOrder/MenuOrders';
 
-import menuOne from './../events/menuOne';
-import onCount from './../events/onCount';
+import handleCategory from './../components/MakeOrder/events/handleCategory';
+import onCount from './../components/MakeOrder/events/onCount';
+import setRestaurantId from './../components/MakeOrder/events/setRestaurantId';
 
-import postGetCityList from './../api/postGetCityList';
-import postGetStreetList from './../api/postGetStreetList';
-import postOrderBasket from './../api/postOrderBasket';
-import postGetOrders from './../api/postGetOrders';
-import postGetMenuCategory from './../api/postGetMenuCategory';
+import postGetHouseList from './../components/MakeOrder/api/postGetHouseList';
+import postGetCityList from './../components/MakeOrder/api/postGetCityList';
+import postGetStreetList from './../components/MakeOrder/api/postGetStreetList';
+import postOrderBasket from './../components/MakeOrder/api/postOrderBasket';
+import postGetMenuCategory from './../components/MakeOrder/api/postGetMenuCategory';
 import paths from './../_paths';
 
 export default class MakeOrder extends Component {
   constructor(props) {
     super(props);
 
-    this.menuOne = menuOne.bind(this);
+    this.handleCategory = handleCategory.bind(this);
     this.onCount = onCount.bind(this);
+    this.setRestaurantId = setRestaurantId.bind(this);
 
+    this.postGetHouseList = postGetHouseList.bind(this);
     this.postGetStreetList = postGetStreetList.bind(this);
     this.postGetCityList = postGetCityList.bind(this);
     this.postOrderBasket = postOrderBasket.bind(this);
-    this.postGetOrders = postGetOrders.bind(this);
     this.postGetMenuCategory = postGetMenuCategory.bind(this);
 
     this.state = {
-      orders: [],
       category: [],
       productList: [],
-      restaurantId: 2995,
-      screen: 'MakeOrder',
+      restaurantId: 0,
       basket: {},
-      showMap: false,
       cityList: [],
+      streetList: [],
+      houseList: [],
+      cityId: 4,
     };
   }
 
   componentDidMount() {
-    this.postGetStreetList();
-    this.postGetCityList();
-    this.postGetOrders(paths.main);
     this.postGetMenuCategory(paths.menuCategory, 2728);
+    this.postGetCityList();
+    this.postGetStreetList();
   }
 
   render() {
     return (
-      <ProductList
-      klass='modal-open modal-order' category={this.state.category}
-      menuOne={this.menuOne} productList={this.state.productList}
-      onClose={this.onClose} onCount={this.onCount} basket={this.state.basket}
-      postOrderBasket={this.postOrderBasket} allState={this.state}
-      />
+      <div className='modal-open modal-order'>
+        <div className='table-header'>
+          <div className='header-tel'>
+            <span>+79037339131</span>
+          </div>
+          <div className='header-name'>Создать новый заказ</div>
+          <Link to='/' className='button-close'>
+            <div>+</div>
+          </Link>
+        </div>
+        <ProductList
+          category={this.state.category}
+          handleCategory={this.handleCategory} productList={this.state.productList}
+          onClose={this.onClose} onCount={this.onCount} basket={this.state.basket}
+          postOrderBasket={this.postOrderBasket}
+        >
+          <MenuOrders
+          postOrderBasket={this.postOrderBasket} cityList={this.state.cityList}
+          streetList={this.state.streetList}
+          houseList={this.state.houseList}
+          postGetHouseList={this.postGetHouseList}
+          setRestaurantId={this.setRestaurantId}
+          />
+        </ProductList>
+      </div>
     );
   }
 }

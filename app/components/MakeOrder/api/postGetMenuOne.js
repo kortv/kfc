@@ -1,5 +1,5 @@
 import axios from 'axios';
-import paths from './../_paths';
+import paths from './../../../_paths';
 
 export default function postGetMenuOne(restaurantId, categoryId) {
   const path = paths.menuProduct;
