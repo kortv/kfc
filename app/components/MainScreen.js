@@ -1,6 +1,8 @@
 import React from 'react';
 import MakeOrder from './MainScreens/MakeOrder';
 import TablOrders from './MainScreens/TablOrders';
+import ModalMap from './Modals/ModalMap';
+
 
 export default function MainScreen(props) {
   let screen = '';
@@ -16,9 +18,12 @@ export default function MainScreen(props) {
 
   case 'TablOrders':
     screen = (<TablOrders
+    tableClick={props.tableClick}
     category={props.category}
     orders={props.orders}
-    />);
+    >
+      {props.showMap && <ModalMap />}
+    </TablOrders>);
     break;
 
   default:
