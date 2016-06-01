@@ -3,10 +3,12 @@ import { Link } from 'react-router';
 
 import ProductList from './../components/MakeOrder/ProductList';
 import MenuOrders from './../components/MakeOrder/MenuOrders';
+import AddsForm from './../components/MakeOrder/AddsForm';
 
 import handleCategory from './../components/MakeOrder/events/handleCategory';
 import onCount from './../components/MakeOrder/events/onCount';
 import setRestaurantId from './../components/MakeOrder/events/setRestaurantId';
+import setId from './../components/MakeOrder/events/setId';
 
 import postGetHouseList from './../components/MakeOrder/api/postGetHouseList';
 import postGetCityList from './../components/MakeOrder/api/postGetCityList';
@@ -22,6 +24,7 @@ export default class MakeOrder extends Component {
     this.handleCategory = handleCategory.bind(this);
     this.onCount = onCount.bind(this);
     this.setRestaurantId = setRestaurantId.bind(this);
+    this.setId = setId.bind(this);
 
     this.postGetHouseList = postGetHouseList.bind(this);
     this.postGetStreetList = postGetStreetList.bind(this);
@@ -44,7 +47,6 @@ export default class MakeOrder extends Component {
   componentDidMount() {
     this.postGetMenuCategory(paths.menuCategory, 2728);
     this.postGetCityList();
-    this.postGetStreetList();
   }
 
   render() {
@@ -66,12 +68,17 @@ export default class MakeOrder extends Component {
           postOrderBasket={this.postOrderBasket}
         >
           <MenuOrders
-          postOrderBasket={this.postOrderBasket} cityList={this.state.cityList}
-          streetList={this.state.streetList}
-          houseList={this.state.houseList}
-          postGetHouseList={this.postGetHouseList}
-          setRestaurantId={this.setRestaurantId}
-          />
+          postOrderBasket={this.postOrderBasket}
+          >
+            <AddsForm
+              cityList={this.state.cityList}
+              streetList={this.state.streetList}
+              houseList={this.state.houseList}
+              postGetHouseList={this.postGetHouseList}
+              setRestaurantId={this.setRestaurantId}
+              setId={this.setId} postGetStreetList={this.postGetStreetList}
+            />
+          </MenuOrders>
         </ProductList>
       </div>
     );

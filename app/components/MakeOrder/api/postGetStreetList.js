@@ -1,8 +1,8 @@
 import axios from 'axios';
 import paths from './../../../_paths';
 
-export default function postGetStreetList(street = '1-й Автозаводский проезд') {
-  axios.post(paths.streetList, { city_id: this.state.cityId, street })
+export default function postGetStreetList(letters = '', cityId) {
+  axios.post(paths.streetList, { city_id: cityId || this.state.cityId, letters })
   .then((data) => {
     console.log(data);
     this.setState({
