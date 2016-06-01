@@ -13,13 +13,6 @@ export default class Client extends Component {
 
     this.state = {
       orders: [],
-      category: [],
-      productList: [],
-      restaurantId: 2995,
-      screen: 'MakeOrder',
-      basket: {},
-      showMap: false,
-      cityList: [],
     };
   }
 

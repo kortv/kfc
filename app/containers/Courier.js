@@ -23,7 +23,7 @@ export default class Courier extends Component {
   render() {
     return (
       <div className='table-container'>
-        <ModalMap />
+        <ModalMap mapHeight={{ height: '340px' }} />
         <TablOrders
           orders={this.state.orders}
         />

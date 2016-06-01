@@ -2,7 +2,7 @@ import { default as React, Component } from 'react';
 
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
 
-export default class PopUpInfoWindow extends Component {
+export default class ModalMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,7 +64,7 @@ export default class PopUpInfoWindow extends Component {
             containerElement={
               <div
                 {...this.props}
-                style={{ height: '340px' }}
+                style={this.props.mapHeight}
               >
               </div>
             }
