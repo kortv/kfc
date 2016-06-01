@@ -17,7 +17,7 @@ export default function TableRow({ order }) {
       </td>
       <td className='column-user_agent'>{order.os || ''}</td>
       <td className='column-tel'>
-        <a>+79037883181</a>
+        <Link to='/client/clientId'>+79037883181</Link>
       </td>
       <td className='column-city'>Москва</td>
       <td className='column-restaurant'>{order.restaurant_name}</td>
@@ -28,8 +28,10 @@ export default function TableRow({ order }) {
         <span>&nbsp;руб</span>
       </td>
       <td className='column-amount'>
-        <span className='icon-cart'></span>
-        <a>5</a>
+        <Link to='/details/orderId'>
+          <span className='icon-cart'></span>
+          <a>5</a>
+        </Link>
       </td>
       <td className='column-time_issue'>
         <span>{getTime(order.delivery_time).time}</span>

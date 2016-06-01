@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LeftBlock from './../components/LeftMenu/LeftBlock';
+import LeftBlock from './../components/App/LeftBlock';
 
 export default class App extends Component {
   constructor(props) {
@@ -7,11 +7,7 @@ export default class App extends Component {
 
     this.state = {};
   }
-
-  componentDidMount() {
-
-  }
-
+  componentDidMount() {}
   render() {
     return (
       <div className='layout'>
