@@ -17,7 +17,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className={`layout${this.state.isHome ? '' : ' modal-open'}`}>
+      <div className={`layout${this.state.isHome ? ' grid' : ''}`}>
         <LeftBlock />
         {this.props.children}
       </div>
