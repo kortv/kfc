@@ -5,12 +5,19 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      isHome: props.location.pathname === '/',
+    };
   }
   componentDidMount() {}
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      isHome: nextProps.location.pathname === '/',
+    });
+  }
   render() {
     return (
-      <div className='layout'>
+      <div className={`layout${this.state.isHome ? '' : ' modal-open'}`}>
         <LeftBlock />
         {this.props.children}
       </div>
