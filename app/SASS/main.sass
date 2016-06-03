@@ -36,6 +36,21 @@ input::-webkit-calendar-picker-indicator
 html, body, #app
   height: 100%
 
+.color-red
+  color: $red
+  fill: $red
+  stroke: $red
+
+.color-white
+  color: $white
+  fill: $white
+  stroke: $white
+
+%vertical-align
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+//@extend %vertical-align
 
 //html
 //  margin-right: -14px
@@ -170,7 +185,6 @@ html, body, #app
   border-bottom: 1px solid $red
   padding-bottom: .3rem
   margin-bottom: .2rem
-  color: $red
 
 .block-row
   display: block
@@ -181,7 +195,6 @@ html, body, #app
 .block-nth
   display: inline-block
   float: right
-  color: $red
 
 .auth-user
   padding-top: 1.5rem
@@ -210,7 +223,6 @@ html, body, #app
   padding-top: .3rem
   font-size: .7rem
   text-decoration: underline
-  color: $red
 
 
 /////////////// Content //////////////////
@@ -284,23 +296,23 @@ html, body, #app
       background-size: 50%
       background-position-x: 12px
 
-  .lb-incoming
-    background-color: #03E3AF
-    .icon-status_container
-      background-color: #03E3AF
-    .icon-status
-      background: url("../img/lb-incoming.png") center no-repeat
-      background-size: 50%
-      background-position-x: 12px
-
-  .lb-nomarker
+  .lb-delivery
     background-color: #FF4F3C
     .icon-status_container
       background-color: #FF4F3C
     .icon-status
-      background: url("../img/lb-nomarker.png") center no-repeat
-      background-size: 50%
-      background-position-x: 12px
+      background: url("../img/lb-delivery.png") center no-repeat
+      background-size: 70%
+      background-position-x: 7px
+
+  //.lb-incoming
+  //  background-color: #03E3AF
+  //  .icon-status_container
+  //    background-color: #03E3AF
+  //  .icon-status
+  //    background: url("../img/lb-incoming.png") center no-repeat
+  //    background-size: 50%
+  //    background-position-x: 12px
 
   .lb-warning
     background-color: #C21B2B
@@ -661,12 +673,12 @@ html, body, #app
     color: black
   .input-city
     border-bottom: 1px solid #f5f5f5
-    padding: 1.25rem 3% 1.25rem 1.4rem
+    padding-right: 1.25rem
     input
-      width: 55%
+      width: 50%
       border-bottom: none
     .button-standart
-      width: 45%
+      width: 50%
   .input-container
     input
       display: inline-block
@@ -700,6 +712,12 @@ html, body, #app
     :-ms-input-placeholder
       color: #bababa
 
+  .delivery-list
+    >div
+      border-bottom: 1px solid #f5f5f5
+      padding: .8rem 1.25rem .8rem 1.4rem
+    input
+      width: auto
   .place-order_container
     padding: 1.25rem 3% 1.25rem 1.4rem
   .arrival-time
@@ -707,7 +725,6 @@ html, body, #app
     width: 60%
     font-family: $font_OfficinaSerifMediumITCRegular
     font-size: 1.2rem
-    color: $red
     padding-right: 1.5rem
     vertical-align: middle
   .button-standart
@@ -715,33 +732,90 @@ html, body, #app
     width: 40%
     vertical-align: middle
   .payment-method
-    padding: 1.25rem 0 1.25rem 1.4rem
-    border-bottom: 1px solid #f5f5f5
+    >div
+      padding-bottom: .4rem
+      padding-top: .4rem
+      border-top: 1px solid #f5f5f5
+      transform: translateX(33px)
+    >div:first-child
+      padding-top: 0
+      border-top: none
     >div:last-child
-      padding-top: .8rem
+      padding-bottom: 0
+    input, label
+      margin-left: -33px
     input
       width: auto
     label
       font-size: 1.1rem
       font-family: $font_PFDinDisplayPro-Light
       padding-left: 2.2rem
-      span:last-child
-        color: $red
+    .information
+      float: right
+      display: inline-block
+      font-family: $font_PFDinDisplayPro-Light
+      font-size: .8rem
+      padding: .4rem
+      border: 1px solid black
+      transform: translateX(-15px) translateY(-.4rem)
   .drop-down
     font-size: 1.1rem
     font-family: $font_PFDinDisplayPro-Light
-    padding: .8rem 1.25rem .8rem 1.4rem
-    border-bottom: 1px solid #f5f5f5
-  .content_drop-down
-    input
-      width: auto
-    label
-      font-size: 1.1rem
-      font-family: $font_PFDinDisplayPro-Light
-      padding-left: 2.2rem
+    .content_drop-down
+      display: none
+
+  .drop-down.active
+    .title_drop-down
+      padding-bottom: .8rem
+    .content_drop-down
+      display: block
+      input, label
+        margin-left: -33px
+      >div
+        padding-top: .4rem
+        padding-bottom: .4rem
+        border-top: 1px solid #f5f5f5
+        transform: translateX(33px)
+      >div:last-child
+        padding-bottom: 0
+      label
+        font-size: 1.1rem
+        font-family: $font_PFDinDisplayPro-Light
+        padding-left: 2.2rem
+        vertical-align: middle
   .cost-delivery
     float: right
-    color: $red
+    transform: translateX(-33px)
+    padding-top: 2px
+
+
+  .time-delivery
+    .day-delivery
+      width: 60%
+      display: inline-block
+      a
+        text-align: center
+        width: 50%
+        display: inline-block
+        background: $red
+      .today
+        border-radius: .4rem 0 0 .4rem
+      .tomorrow
+        border-radius: 0 .4rem .4rem 0
+      .active
+        background: #95162D
+    .input_time-delivery
+      width: 40%
+      display: inline-block
+      padding-left: 1.25rem
+      text-align: center
+      input
+        width: 55%
+        text-align: center
+        border-radius: .4rem
+        padding: .65rem
+        border: 1px solid #C2C2C2
+
 
 
 .five-stars
@@ -777,7 +851,7 @@ html, body, #app
 .radio-button:not(checked) + label:before
   content: ''
   position: absolute
-  top: 0
+  top: 2px
   left: 0
   width: 16px
   height: 16px
@@ -787,7 +861,7 @@ html, body, #app
 .radio-button:not(checked) + label:after
   content: ''
   position: absolute
-  top: 18px/2 - 10px/2
+  top: 18px/2 - 10px/2 + 2px
   left: 18px/2 - 10px/2
   width: 10px
   height: 10px

@@ -33,7 +33,7 @@ export default function LeftBlock(props) {
             <div className="auth-user">
                 <div className="icon-user"></div>
                 <div className="user-name">Татьяна Лукичева</div>
-                <a className="exit-button">закончить работу</a>
+                <a className="exit-button color-red">закончить работу</a>
             </div>
         </div>
     </div>
