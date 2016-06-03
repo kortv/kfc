@@ -696,11 +696,11 @@ html, body, #app
       padding: 1.25rem 0 1.25rem 1.4rem
       font-family: $font_PFDinDisplayPro-Light
       display: inline-block
-      width: 28%
+      width: 32%
     input
       padding-left: 0
       display: inline-block
-      width: 72%
+      width: 68%
       text-overflow: ellipsis
       border-bottom: none
     ::-webkit-input-placeholder
@@ -783,10 +783,34 @@ html, body, #app
         font-family: $font_PFDinDisplayPro-Light
         padding-left: 2.2rem
         vertical-align: middle
+      .settings-row
+        text-align: right
+        padding-right: 33px
+        font-size: .7rem
+        a
+          transform: translateX(-33px)
+          padding: 0 1rem
+          text-decoration: underline
+        a:last-child
+          padding-right: 0
+      .deliveryman-input
+        width: 80%
+        display: inline-block
+      .description-button
+      //  p
+      //    //display: inline-block
+      //    padding-left: 1rem
+      //    font-size: .6rem
+
   .cost-delivery
-    float: right
+    width: 20%
+    display: inline-block
+    //float: right
     transform: translateX(-33px)
-    padding-top: 2px
+    padding-top: .4rem
+    //position: absolute
+    //right: 0
+    //top: 0
 
 
   .time-delivery
