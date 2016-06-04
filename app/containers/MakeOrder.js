@@ -10,6 +10,7 @@ import onCount from './../components/MakeOrder/events/onCount';
 import setRestaurantId from './../components/MakeOrder/events/setRestaurantId';
 import setId from './../components/MakeOrder/events/setId';
 
+import postGetCourierList from './../components/MakeOrder/api/postGetCourierList';
 import postGetHouseList from './../components/MakeOrder/api/postGetHouseList';
 import postGetCityList from './../components/MakeOrder/api/postGetCityList';
 import postGetStreetList from './../components/MakeOrder/api/postGetStreetList';
@@ -26,6 +27,7 @@ export default class MakeOrder extends Component {
     this.setRestaurantId = setRestaurantId.bind(this);
     this.setId = setId.bind(this);
 
+    this.postGetCourierList = postGetCourierList.bind(this);
     this.postGetHouseList = postGetHouseList.bind(this);
     this.postGetStreetList = postGetStreetList.bind(this);
     this.postGetCityList = postGetCityList.bind(this);
@@ -47,6 +49,7 @@ export default class MakeOrder extends Component {
   componentDidMount() {
     this.postGetMenuCategory(paths.menuCategory, 2728);
     this.postGetCityList();
+    this.postGetCourierList();
   }
 
   render() {
