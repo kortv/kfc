@@ -11,7 +11,6 @@ export default function TimePicker() {
   for (m; m < 12; m++) {
     minuts[m] = `${m * 5}`.length > 1 ? m * 5 : `0${m * 5}`;
   }
-  console.log(hours, minuts);
   return (
     <fotm>
       <div>

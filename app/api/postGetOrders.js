@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default function postGetOrders(path, body) {
-  axios.post(path, body)
+  axios.post(path, body || {})
   .then((data) => {
     console.log(data);
     this.setState({
